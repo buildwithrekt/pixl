@@ -1,0 +1,289 @@
+@import "tailwindcss";
+
+/* ========================================
+   PIXELBOARD Design System
+   ======================================== */
+
+:root {
+  /* Core palette */
+  --paper: #FAF5EA;
+  --ink: #17150F;
+  --red: #E8402A;
+  --blue: #2A5BFF;
+  --yellow: #FFC800;
+  --orange: #FF8A00;
+  --cream: #FFF6DC;
+  --grid-line: #E9E1CF;
+
+  /* Semantic tokens (shadcn compat) */
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: #FFFFFF;
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--red);
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--blue);
+  --secondary-foreground: #FFFFFF;
+  --muted: var(--grid-line);
+  --muted-foreground: var(--ink);
+  --accent: var(--yellow);
+  --accent-foreground: var(--ink);
+  --destructive: var(--red);
+  --border: var(--ink);
+  --input: var(--ink);
+  --ring: var(--blue);
+  --radius: 8px;
+
+  /* Font families */
+  --font-display: var(--font-bricolage), system-ui, sans-serif;
+  --font-body: var(--font-space), system-ui, sans-serif;
+  --font-pixel: var(--font-silkscreen), monospace;
+}
+
+/* ========================================
+   Theme inline for Tailwind v4
+   ======================================== */
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-red: var(--red);
+  --color-blue: var(--blue);
+  --color-yellow: var(--yellow);
+  --color-orange: var(--orange);
+  --color-cream: var(--cream);
+  --color-grid-line: var(--grid-line);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-pixel: var(--font-pixel);
+
+  --radius-btn: 8px;
+  --radius-btn-lg: 10px;
+  --radius-card: 14px;
+  --radius-chip: 8px;
+  --radius-pill: 9999px;
+
+  /* Hard offset shadows */
+  --shadow-hard-sm: 2px 2px 0 var(--ink);
+  --shadow-hard-md: 3px 3px 0 var(--ink);
+  --shadow-hard-lg: 6px 6px 0 var(--ink);
+  --shadow-hard-red: 6px 6px 0 var(--red);
+  --shadow-hard-blue: 6px 6px 0 var(--blue);
+  --shadow-hard-yellow: 6px 6px 0 var(--yellow);
+
+  /* Animations */
+  --animate-flicker: flicker 1s steps(1) infinite;
+  --animate-marquee: marquee 28s linear infinite;
+}
+
+/* ========================================
+   Frog Theme
+   ======================================== */
+
+.theme-frog {
+  /* Frog palette */
+  --paper: #f0f7e6;
+  --ink: #0d1f0d;
+  --red: #ccff00;       /* Robinhood green as primary */
+  --blue: #1a472a;      /* Dark swamp */
+  --yellow: #7cb518;    /* Lime */
+  --orange: #4a7c23;    /* Forest green */
+  --cream: #d4e6b5;
+  --grid-line: #c5d9a8;
+
+  /* Override semantic tokens */
+  --primary: #ccff00;
+  --primary-foreground: #0d1f0d;
+  --secondary: #1a472a;
+  --secondary-foreground: #f0f7e6;
+  --accent: #7cb518;
+  --ring: #ccff00;
+
+  /* Frog shadows */
+  --shadow-hard-red: 6px 6px 0 #ccff00;
+  --shadow-hard-blue: 6px 6px 0 #1a472a;
+  --shadow-hard-yellow: 6px 6px 0 #7cb518;
+}
+
+.theme-frog::selection {
+  background: #ccff00;
+}
+
+/* ========================================
+   Keyframes
+   ======================================== */
+
+@keyframes flicker {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pulse-color {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes color-shift {
+  0% { background-color: var(--red); }
+  25% { background-color: var(--blue); }
+  50% { background-color: var(--yellow); }
+  75% { background-color: var(--orange); }
+  100% { background-color: var(--red); }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: var(--font-body);
+  }
+
+  body {
+    @apply bg-paper text-ink antialiased;
+    font-family: var(--font-body);
+  }
+
+  /* Selection highlight */
+  ::selection {
+    background: var(--yellow);
+  }
+
+  /* Global focus state - non-negotiable per design system */
+  *:focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 2px;
+  }
+}
+
+/* ========================================
+   Reduced Motion
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+
+@layer utilities {
+  /* Font utilities */
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.14;
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-pixel {
+    font-family: var(--font-pixel);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Display text sizes */
+  .text-display-xl {
+    font-size: clamp(30px, 4.6vw, 56px);
+    line-height: 1.14;
+    letter-spacing: -0.5px;
+  }
+
+  .text-display-lg {
+    font-size: clamp(24px, 3.5vw, 42px);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+
+  /* Hard shadow utilities */
+  .shadow-hard-sm {
+    box-shadow: var(--shadow-hard-sm);
+  }
+
+  .shadow-hard-md {
+    box-shadow: var(--shadow-hard-md);
+  }
+
+  .shadow-hard-lg {
+    box-shadow: var(--shadow-hard-lg);
+  }
+
+  .shadow-hard-red {
+    box-shadow: var(--shadow-hard-red);
+  }
+
+  .shadow-hard-blue {
+    box-shadow: var(--shadow-hard-blue);
+  }
+
+  .shadow-hard-yellow {
+    box-shadow: var(--shadow-hard-yellow);
+  }
+
+  /* Animation utilities */
+  .animate-flicker {
+    animation: var(--animate-flicker);
+  }
+
+  .animate-marquee {
+    animation: var(--animate-marquee);
+  }
+
+  .animate-pulse-color {
+    animation: pulse-color 2s steps(2) infinite;
+  }
+
+  .animate-color-shift {
+    animation: color-shift 4s steps(4) infinite;
+  }
+
+  .animate-wave {
+    animation: wave 1s steps(2) infinite;
+  }
+}

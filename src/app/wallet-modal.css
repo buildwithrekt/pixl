@@ -1,0 +1,79 @@
+/* ========================================
+   Wallet Adapter Modal Overrides
+   Match PIXELBOARD design system
+   ======================================== */
+
+/* Modal backdrop */
+.wallet-adapter-modal-wrapper {
+  background-color: rgba(23, 21, 15, 0.85) !important;
+}
+
+/* Modal container */
+.wallet-adapter-modal-container {
+  background: var(--paper) !important;
+  border: 2.5px solid var(--ink) !important;
+  border-radius: 14px !important;
+  box-shadow: 6px 6px 0 var(--ink) !important;
+}
+
+/* Modal title */
+.wallet-adapter-modal-title {
+  font-family: var(--font-pixel) !important;
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  color: var(--ink) !important;
+}
+
+/* Wallet list */
+.wallet-adapter-modal-list {
+  margin: 0 !important;
+}
+
+.wallet-adapter-modal-list li {
+  background: white !important;
+  border: 2px solid var(--ink) !important;
+  border-radius: 8px !important;
+  margin-bottom: 8px !important;
+  transition: background-color 0s !important;
+}
+
+.wallet-adapter-modal-list li:hover {
+  background: var(--yellow) !important;
+}
+
+/* Wallet button in list */
+.wallet-adapter-button {
+  font-family: var(--font-body) !important;
+  color: var(--ink) !important;
+}
+
+/* Modal close button */
+.wallet-adapter-modal-button-close {
+  background: var(--red) !important;
+  border: 2px solid var(--ink) !important;
+  border-radius: 8px !important;
+  box-shadow: 2px 2px 0 var(--ink) !important;
+  transition: transform 0s, box-shadow 0s !important;
+}
+
+.wallet-adapter-modal-button-close:hover {
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 3px 3px 0 var(--ink) !important;
+}
+
+.wallet-adapter-modal-button-close svg {
+  fill: white !important;
+}
+
+/* Collapse button */
+.wallet-adapter-collapse-button {
+  font-family: var(--font-body) !important;
+  color: var(--blue) !important;
+}
+
+/* More wallets text */
+.wallet-adapter-modal-list-more {
+  font-family: var(--font-body) !important;
+  color: var(--ink) !important;
+}

@@ -1,0 +1,171 @@
+// PIXELBOARD Database Schema
+// 1024×1024 pixel canvas, 8×8 cell grid (128×128 = 16,384 cells)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ========================================
+// Zone - A purchased rectangular area
+// ========================================
+model Zone {
+  id            String     @id @default(cuid())
+
+  // Position in cells (8×8 px each), not pixels
+  x             Int        // 0-127
+  y             Int        // 0-127
+  w             Int        // width in cells (min 1)
+  h             Int        // height in cells (min 1)
+
+  // Owner
+  wallet        String     // Solana wallet address
+
+  // Status flow: reserved → paid → drawn
+  status        ZoneStatus @default(RESERVED)
+
+  // Pricing (frozen at reservation time)
+  pricePerPixel Int        // $PIXEL per pixel at reservation
+  totalPixels   Int        // w * h * 64 (cells to pixels)
+  totalPrice    BigInt     // pricePerPixel * totalPixels
+
+  // Reservation
+  reservationId String     @unique // UUID for payment memo
+  expiresAt     DateTime?  // TTL for reservation (10 min)
+
+  // Payment verification
+  txSignature   String?    // Solana tx signature
+  blockTime     DateTime?  // On-chain confirmation time
+  paidAt        DateTime?
+
+  // Content
+  imageUrl      String?    // Uploaded image URL
+  projectName   String?    // Optional project name
+  projectLink   String?    // Optional link
+
+  // Metadata
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
+  @@index([wallet])
+  @@index([status])
+  @@index([reservationId])
+  @@index([expiresAt])
+}
+
+enum ZoneStatus {
+  RESERVED  // Locked, awaiting payment
+  PAID      // Payment confirmed
+  DRAWN     // Image uploaded and composited
+  EXPIRED   // Reservation expired (cleanup)
+  REFUNDED  // Payment refunded
+}
+
+// ========================================
+// PriceState - Singleton for pricing tiers
+// ========================================
+model PriceState {
+  id            String   @id @default("singleton")
+
+  // Current state
+  pixelsSold    Int      @default(0)     // Total pixels sold
+  currentTier   Int      @default(1)     // Current price tier
+  basePrice     Int      @default(10)    // Base price in $PIXEL
+
+  // Tier thresholds (percentage of total pixels)
+  // Tier 1: 0-10% = 1x, Tier 2: 10-25% = 2x, etc.
+
+  // History for analytics
+  history       Json     @default("[]")  // Array of {tier, price, timestamp, pixelsSold}
+
+  updatedAt     DateTime @updatedAt
+}
+
+// ========================================
+// Event - Append-only log for timelapse
+// ========================================
+model Event {
+  id        String    @id @default(cuid())
+  type      EventType
+  zoneId    String?
+  wallet    String?
+  data      Json      @default("{}")
+  createdAt DateTime  @default(now())
+
+  @@index([type])
+  @@index([zoneId])
+  @@index([createdAt])
+}
+
+enum EventType {
+  ZONE_RESERVED
+  ZONE_PAID
+  ZONE_DRAWN
+  ZONE_EXPIRED
+  ZONE_REFUNDED
+  PRICE_TIER_CHANGE
+  BURN_EXECUTED
+  COMPOSITE_UPDATED
+}
+
+// ========================================
+// BurnTx - Treasury burn records
+// ========================================
+model BurnTx {
+  id          String   @id @default(cuid())
+
+  amount      BigInt   // $PIXEL burned
+  txSignature String   @unique
+  blockTime   DateTime
+
+  // Context
+  trigger     String?  // "weekly", "tier_change", "manual"
+  tier        Int?     // Price tier at burn time
+
+  createdAt   DateTime @default(now())
+
+  @@index([blockTime])
+}
+
+// ========================================
+// OrphanPayment - Payments with bad/expired memo
+// ========================================
+model OrphanPayment {
+  id          String   @id @default(cuid())
+
+  wallet      String
+  amount      BigInt
+  memo        String?
+  txSignature String   @unique
+  blockTime   DateTime
+
+  // Recovery status
+  resolved    Boolean  @default(false)
+  resolvedAt  DateTime?
+  resolution  String?  // "refunded", "matched", "manual"
+
+  createdAt   DateTime @default(now())
+
+  @@index([wallet])
+  @@index([resolved])
+}
+
+// ========================================
+// Snapshot - Canvas state for timelapse
+// ========================================
+model Snapshot {
+  id          String   @id @default(cuid())
+
+  imageUrl    String   // Stored composite URL
+  pixelsSold  Int
+  zonesCount  Int
+  tier        Int
+
+  createdAt   DateTime @default(now())
+
+  @@index([createdAt])
+}
