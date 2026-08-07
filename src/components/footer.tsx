@@ -4,9 +4,9 @@ import { Sprite, SPRITE_MAPS } from "@/lib/sprites"
 const links = {
   product: [
     { label: "Board", href: "/board" },
-    { label: "Gallery", href: "/gallery" },
+    { label: "Marketplace", href: "/marketplace" },
     { label: "How it works", href: "/how-it-works" },
-    { label: "$PIXEL", href: "/pixel" },
+    { label: "$BLOK", href: "/blok" },
   ],
   support: [
     { label: "Recover payment", href: "/recover" },
@@ -17,8 +17,8 @@ const links = {
     { label: "Privacy", href: "/privacy" },
   ],
   social: [
-    { label: "X / Twitter", href: "https://twitter.com/PIXELBOARD", external: true },
-    { label: "Discord", href: "https://discord.gg/pixelboard", external: true },
+    { label: "X / Twitter", href: "https://twitter.com/BLOK", external: true },
+    { label: "Discord", href: "https://discord.gg/blok", external: true },
   ],
 }
 
@@ -31,7 +31,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <Sprite map={SPRITE_MAPS.fire} pixelSize={4} />
-              <span className="font-pixel text-lg text-paper">PIXELBOARD</span>
+              <span className="font-pixel text-lg text-paper">BLOK</span>
             </div>
             <p className="text-sm text-paper/60">
               One million pixels. Bought by degens, claimed by memecoins.
@@ -131,7 +131,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-paper/20 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-paper/50">
-            © {new Date().getFullYear()} PIXELBOARD. All rights reserved.
+            © {new Date().getFullYear()} BLOK. All rights reserved.
           </p>
           <div className="flex items-center gap-2 text-sm text-paper/50">
             <span>Built on</span>

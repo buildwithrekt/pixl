@@ -13,10 +13,11 @@ const chipVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-yellow text-ink",
+        default: "bg-white text-ink border-yellow",
         secondary: "bg-white text-ink",
         info: "bg-white text-blue border-blue",
         muted: "bg-grid-line text-ink border-grid-line shadow-none",
+        highlight: "bg-yellow text-ink",
       },
     },
     defaultVariants: {
