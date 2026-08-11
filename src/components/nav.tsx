@@ -4,8 +4,11 @@ import React from "react"
 import Link from "next/link"
 import { WalletButton } from "@/components/wallet/wallet-button"
 import { MobileNav } from "@/components/mobile-nav"
+import { useWalletAuth } from "@/hooks/use-wallet-auth"
 
 export function Nav() {
+  const { isSignedIn } = useWalletAuth()
+
   return (
     <header className="w-full bg-black border-b border-gray-800">
       <nav className="relative flex items-center justify-between px-4 md:px-6 py-4 max-w-7xl mx-auto w-full">
@@ -40,16 +43,18 @@ export function Nav() {
           href={process.env.NEXT_PUBLIC_BLOK_BUY_URL || "/blokr"}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm text-gray-400 hover:text-lime transition-colors"
+          className="text-sm text-lime hover:text-lime/80 transition-colors"
         >
           Get $BLOK
         </a>
-        <Link
-          href="/profile"
-          className="text-sm text-gray-400 hover:text-lime transition-colors"
-        >
-          Profile
-        </Link>
+        {isSignedIn && (
+          <Link
+            href="/profile"
+            className="text-sm text-gray-400 hover:text-lime transition-colors"
+          >
+            Profile
+          </Link>
+        )}
       </div>
 
       {/* Desktop: Center wordmark */}

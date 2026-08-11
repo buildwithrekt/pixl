@@ -4,18 +4,19 @@ import { useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { WalletButton } from "@/components/wallet/wallet-button"
+import { useWalletAuth } from "@/hooks/use-wallet-auth"
 
 const NAV_LINKS = [
   { href: "/board", label: "Board" },
   { href: "/gallery", label: "Gallery" },
   { href: "/marketplace", label: "Marketplace" },
   { href: "/how-it-works", label: "How it works" },
-  { href: process.env.NEXT_PUBLIC_BLOK_BUY_URL || "/blokr", label: "Get $BLOK", external: true },
-  { href: "/profile", label: "Profile" },
+  { href: process.env.NEXT_PUBLIC_BLOK_BUY_URL || "/blokr", label: "Get $BLOK", external: true, highlight: true },
 ]
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false)
+  const { isSignedIn } = useWalletAuth()
 
   const handleClose = () => setIsOpen(false)
 
@@ -95,7 +96,11 @@ export function MobileNav() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={handleClose}
-                      className="block text-lg text-gray-400 hover:text-lime transition-colors py-2"
+                      className={`block text-lg py-2 transition-colors ${
+                        link.highlight
+                          ? "text-lime hover:text-lime/80"
+                          : "text-gray-400 hover:text-lime"
+                      }`}
                     >
                       {link.label}
                     </a>
@@ -110,6 +115,15 @@ export function MobileNav() {
                     </Link>
                   )
                 ))}
+                {isSignedIn && (
+                  <Link
+                    href="/profile"
+                    onClick={handleClose}
+                    className="block text-lg text-gray-400 hover:text-lime transition-colors py-2"
+                  >
+                    Profile
+                  </Link>
+                )}
               </nav>
 
               {/* Wallet button */}
