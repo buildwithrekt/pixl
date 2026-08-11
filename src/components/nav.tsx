@@ -36,12 +36,14 @@ export function Nav() {
         >
           Marketplace
         </Link>
-        <Link
-          href="/blokr"
+        <a
+          href={process.env.NEXT_PUBLIC_BLOK_BUY_URL || "/blokr"}
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-sm text-gray-400 hover:text-lime transition-colors"
         >
-          $BLOK
-        </Link>
+          Get $BLOK
+        </a>
         <Link
           href="/profile"
           className="text-sm text-gray-400 hover:text-lime transition-colors"

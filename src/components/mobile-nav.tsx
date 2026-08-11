@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { href: "/gallery", label: "Gallery" },
   { href: "/marketplace", label: "Marketplace" },
   { href: "/how-it-works", label: "How it works" },
-  { href: "/blokr", label: "$BLOK" },
+  { href: process.env.NEXT_PUBLIC_BLOK_BUY_URL || "/blokr", label: "Get $BLOK", external: true },
   { href: "/profile", label: "Profile" },
 ]
 
@@ -88,14 +88,27 @@ export function MobileNav() {
               {/* Navigation links */}
               <nav className="space-y-4 mb-8">
                 {NAV_LINKS.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={handleClose}
-                    className="block text-lg text-gray-400 hover:text-lime transition-colors py-2"
-                  >
-                    {link.label}
-                  </Link>
+                  link.external ? (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={handleClose}
+                      className="block text-lg text-gray-400 hover:text-lime transition-colors py-2"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={handleClose}
+                      className="block text-lg text-gray-400 hover:text-lime transition-colors py-2"
+                    >
+                      {link.label}
+                    </Link>
+                  )
                 ))}
               </nav>
 

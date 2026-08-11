@@ -1,12 +1,14 @@
 import Link from "next/link"
 import { Sprite, SPRITE_MAPS } from "@/lib/sprites"
 
+const BLOK_BUY_URL = process.env.NEXT_PUBLIC_BLOK_BUY_URL || "/blokr"
+
 const links = {
   product: [
     { label: "Board", href: "/board" },
     { label: "Marketplace", href: "/marketplace" },
     { label: "How it works", href: "/how-it-works" },
-    { label: "$BLOK", href: "/blokr" },
+    { label: "Get $BLOK", href: BLOK_BUY_URL, external: true },
   ],
   support: [
     { label: "Recover payment", href: "/recover" },
@@ -31,7 +33,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <Sprite map={SPRITE_MAPS.fire} pixelSize={4} />
-              <span className="font-mono text-lg text-white">BLOK</span>
+              <span className="font-mono text-lg text-white">BLOKR</span>
             </div>
             <p className="text-sm text-gray-500">
               One million pixels. Bought by degens, claimed by memecoins.
@@ -46,12 +48,23 @@ export function Footer() {
             <ul className="space-y-2">
               {links.product.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-gray-400 hover:text-lime transition-colors"
-                  >
-                    {link.label}
-                  </Link>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-gray-400 hover:text-lime transition-colors"
+                    >
+                      {link.label} ↗
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-sm text-gray-400 hover:text-lime transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
