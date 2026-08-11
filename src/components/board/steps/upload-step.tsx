@@ -75,21 +75,20 @@ export function UploadStep({
     <div className="space-y-6">
       {/* Size info */}
       <div className="flex items-center justify-center gap-2">
-        <span className="text-sm text-ink/60">Your zone size:</span>
+        <span className="text-sm text-gray-500">Your zone size:</span>
         <Chip>
           {zoneSize.w}×{zoneSize.h} px
         </Chip>
       </div>
 
       {/* Dropzone */}
-      <Card
-        shadow="yellow"
-        className={`p-6 transition-colors ${
-          dragActive ? "bg-yellow/20" : "bg-paper"
+      <div
+        className={`p-6 rounded-[4px] border transition-colors ${
+          dragActive ? "bg-lime/10 border-lime" : "bg-gray-800 border-gray-700"
         }`}
       >
         <div
-          className="border-2 border-dashed border-ink/30 rounded-lg p-8 text-center cursor-pointer hover:border-ink/50 transition-colors"
+          className="border-2 border-dashed border-gray-600 rounded-[4px] p-8 text-center cursor-pointer hover:border-lime/50 transition-colors"
           onDragOver={(e) => {
             e.preventDefault()
             setDragActive(true)
@@ -109,7 +108,7 @@ export function UploadStep({
           {preview ? (
             <div className="space-y-4">
               <div
-                className="mx-auto border-2 border-ink rounded overflow-hidden"
+                className="mx-auto border border-lime/50 rounded overflow-hidden"
                 style={{
                   width: Math.min(zoneSize.w, 200),
                   height: Math.min(zoneSize.h, 200),
@@ -121,27 +120,27 @@ export function UploadStep({
                   className="w-full h-full object-cover"
                 />
               </div>
-              <p className="font-pixel text-[10px] text-ink/60 uppercase">
+              <p className="font-mono text-[10px] text-gray-500 uppercase">
                 {file?.name}
               </p>
-              <p className="text-sm text-ink/60">Click or drop to replace</p>
+              <p className="text-sm text-gray-500">Click or drop to replace</p>
             </div>
           ) : (
             <div className="space-y-3">
-              <div className="w-12 h-12 mx-auto border-2 border-ink/30 rounded-lg flex items-center justify-center">
-                <span className="text-2xl">+</span>
+              <div className="w-12 h-12 mx-auto border border-gray-600 rounded-[4px] flex items-center justify-center">
+                <span className="text-2xl text-lime">+</span>
               </div>
-              <p className="font-display font-bold">Drop your image here</p>
-              <p className="text-sm text-ink/60">
+              <p className="font-display font-bold text-white">Drop your image here</p>
+              <p className="text-sm text-gray-500">
                 or click to browse (PNG, JPG, GIF, WebP)
               </p>
             </div>
           )}
         </div>
-      </Card>
+      </div>
 
       {/* Note */}
-      <p className="text-sm text-ink/60 text-center">
+      <p className="text-sm text-gray-500 text-center">
         Image will be resized to fit your zone. Full RGB colors supported.
       </p>
 

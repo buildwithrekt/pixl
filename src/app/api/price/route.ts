@@ -13,7 +13,7 @@ export async function GET() {
       const mockPixelsSold = 12500
       const tier = getTierForPixelsSold(mockPixelsSold)
       const multiplier = getMultiplierForTier(tier)
-      const basePrice = 150 // $PIXEL per pixel base
+      const basePrice = 150 // $BLOK per pixel base
 
       return NextResponse.json({
         pixelsSold: mockPixelsSold,
@@ -38,7 +38,7 @@ export async function GET() {
           id: "singleton",
           pixelsSold: 0,
           currentTier: 1,
-          basePrice: 150, // $PIXEL per pixel base
+          basePrice: 150, // $BLOK per pixel base
         },
       })
     }

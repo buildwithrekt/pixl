@@ -1,8 +1,8 @@
-# CLAUDE.md — PIXELBOARD
+# CLAUDE.md — BLOK
 
 ## Project overview
 
-PIXELBOARD is a collaborative 1,024×1,024 pixel canvas on Solana. Users and memecoin projects buy rectangular zones and fill them with pixel art or banners. Payment is **on-chain only** (SPL transfer of $PIXEL, a pump.fun token, to a public treasury that burns collected tokens); the canvas state (occupancy, pixels) lives **off-chain** in Postgres. Price per pixel rises in tiers as the board fills. At 100%, the final image is minted as a 1/1 NFT and auctioned (V2).
+BLOK is a collaborative 1,024×1,024 pixel canvas on Solana. Users and memecoin projects buy rectangular zones and fill them with pixel art or banners. Payment is **on-chain only** (SPL transfer of $BLOK, a pump.fun token, to a public treasury that burns collected tokens); the canvas state (occupancy, pixels) lives **off-chain** in Postgres. Price per pixel rises in tiers as the board fills. At 100%, the final image is minted as a 1/1 NFT and auctioned (V2).
 
 Positioning is honest by design: "payment is on-chain and verifiable, the canvas is a website." Never overclaim on-chain-ness in copy or UI.
 
@@ -77,7 +77,7 @@ Rules: surfaces are `--paper` or `#fff` (cards); `--ink` for all borders and tex
 ### Voice & copy
 
 - English, CT-native, confident, a bit cheeky, never corporate: "Bought by degens", "Zero mercy on supply", "HOVER TO PAINT — BUY TO KEEP".
-- Numbers are content: always show real figures (pixels sold / 1,048,576, tier multiplier, $PIXEL burned). Silkscreen + separators for big numbers.
+- Numbers are content: always show real figures (pixels sold / 1,048,576, tier multiplier, $BLOK burned). Silkscreen + separators for big numbers.
 - Buttons say what happens: "Claim your pixels", "Launch app", "Reserve zone", "View burn tx". Sentence case in app UI; UPPERCASE only for Silkscreen labels.
 - Honesty rule in copy: on-chain claims apply to payments and burns only.
 
@@ -94,4 +94,4 @@ Rules: surfaces are `--paper` or `#fff` (cards); `--ink` for all borders and tex
 2. Full RGB everywhere vs enforced palette for aesthetic cohesion
 3. Zones immutable in V1 vs owner can update (re-moderated)
 4. Max active reservations per wallet, exact TTL
-5. Base price in $PIXEL at launch
+5. Base price in $BLOK at launch

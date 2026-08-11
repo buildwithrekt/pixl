@@ -5,6 +5,10 @@ import { Nav } from "@/components/nav"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Chip } from "@/components/ui/chip"
 import { Button } from "@/components/ui/button"
+import { ShareButtons } from "@/components/zone/share-buttons"
+import { ZoneEditImage } from "@/components/zone/zone-edit-image"
+import { SellButton } from "@/components/zone/sell-button"
+import { BuyButton } from "@/components/zone/buy-button"
 import { prisma } from "@/lib/prisma"
 
 export async function generateMetadata({
@@ -32,7 +36,7 @@ export async function generateMetadata({
 
   return {
     title: name,
-    description: `${name} - ${pixels.toLocaleString()} pixels claimed on PIXELBOARD.`,
+    description: `${name} - ${pixels.toLocaleString()} pixels claimed on BLOKR.`,
   }
 }
 
@@ -53,10 +57,10 @@ export default async function ZonePage({ params }: ZonePageProps) {
 
   if (!prisma) {
     return (
-      <main className="min-h-screen bg-paper">
+      <main className="min-h-screen bg-black">
         <Nav />
         <div className="max-w-4xl mx-auto px-6 py-12 text-center">
-          <p className="text-ink/60">Database not configured</p>
+          <p className="text-gray-500">Database not configured</p>
         </div>
       </main>
     )
@@ -78,14 +82,14 @@ export default async function ZonePage({ params }: ZonePageProps) {
   const pixelHeight = zone.h * 8
 
   return (
-    <main className="min-h-screen bg-paper">
+    <main className="min-h-screen bg-black">
       <Nav />
 
       <div className="max-w-4xl mx-auto px-6 py-12">
         {/* Breadcrumb */}
         <Link
           href="/board"
-          className="inline-flex items-center gap-2 text-blue hover:underline mb-8"
+          className="inline-flex items-center gap-2 text-lime hover:underline mb-8"
         >
           <span>←</span>
           <span>Back to board</span>
@@ -94,20 +98,20 @@ export default async function ZonePage({ params }: ZonePageProps) {
         {/* Main content */}
         <div className="grid md:grid-cols-2 gap-8">
           {/* Left: Image */}
-          <Card shadow="red" className="p-6">
+          <Card variant="glow" className="p-6">
             <div
-              className="border-2 border-ink rounded-lg overflow-hidden bg-grid-line"
+              className="border border-gray-700 rounded-[4px] overflow-hidden bg-gray-800"
               style={{ aspectRatio: `${zone.w}/${zone.h}` }}
             >
-              {zone.imageUrl ? (
+              {(zone.originalImageUrl || zone.imageUrl) ? (
                 <img
-                  src={zone.imageUrl}
+                  src={zone.originalImageUrl || zone.imageUrl || ""}
                   alt={zone.projectName || "Zone artwork"}
                   className="w-full h-full object-cover"
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center min-h-[200px]">
-                  <span className="font-pixel text-[10px] text-ink/30 uppercase">
+                  <span className="font-mono text-[10px] text-gray-600 uppercase">
                     No artwork yet
                   </span>
                 </div>
@@ -115,7 +119,7 @@ export default async function ZonePage({ params }: ZonePageProps) {
             </div>
 
             {zone.projectName && (
-              <h1 className="font-display text-xl font-bold mt-4">
+              <h1 className="font-display text-xl font-bold text-white mt-4">
                 {zone.projectName}
               </h1>
             )}
@@ -125,7 +129,7 @@ export default async function ZonePage({ params }: ZonePageProps) {
                 href={zone.projectLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue hover:underline text-sm mt-2 block"
+                className="text-lime hover:underline text-sm mt-2 block"
               >
                 {zone.projectLink}
               </a>
@@ -135,21 +139,21 @@ export default async function ZonePage({ params }: ZonePageProps) {
           {/* Right: Info */}
           <div className="space-y-6">
             {/* Zone ID */}
-            <Card shadow="blue" className="p-4">
-              <span className="font-pixel text-[10px] text-ink/60 uppercase">
+            <Card variant="glow" className="p-4">
+              <span className="font-mono text-[10px] text-gray-500 uppercase">
                 Zone ID
               </span>
-              <p className="font-mono text-sm mt-1 break-all">{zone.id}</p>
+              <p className="font-mono text-sm text-white mt-1 break-all">{zone.id}</p>
             </Card>
 
             {/* Details */}
-            <Card shadow="yellow" className="p-4">
+            <Card variant="glow" className="p-4">
               <CardHeader className="p-0 mb-4">
-                <CardTitle className="text-sm">Details</CardTitle>
+                <CardTitle className="text-sm text-white">Details</CardTitle>
               </CardHeader>
               <CardContent className="p-0 space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-ink/70">Status</span>
+                  <span className="text-sm text-gray-400">Status</span>
                   <Chip
                     variant={
                       zone.status === "DRAWN"
@@ -164,50 +168,50 @@ export default async function ZonePage({ params }: ZonePageProps) {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-ink/70">Position</span>
-                  <span className="font-mono text-sm">
+                  <span className="text-sm text-gray-400">Position</span>
+                  <span className="font-mono text-sm text-white">
                     ({zone.x}, {zone.y})
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-ink/70">Size</span>
-                  <span className="font-body text-sm">
+                  <span className="text-sm text-gray-400">Size</span>
+                  <span className="text-sm text-white">
                     {zone.w}×{zone.h} cells ({pixelWidth}×{pixelHeight} px)
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-ink/70">Total pixels</span>
-                  <span className="font-body text-sm font-medium">
+                  <span className="text-sm text-gray-400">Total pixels</span>
+                  <span className="text-sm font-medium text-white">
                     {formatNumber(zone.totalPixels)}
                   </span>
                 </div>
 
-                <div className="h-px bg-grid-line" />
+                <div className="h-px bg-gray-700" />
 
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-ink/70">Price paid</span>
-                  <Chip>{formatNumber(zone.totalPrice)} $PIXEL</Chip>
+                  <span className="text-sm text-gray-400">Price paid</span>
+                  <Chip>{formatNumber(zone.totalPrice)} $BLOK</Chip>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-ink/70">Tier at purchase</span>
-                  <span className="font-pixel text-sm">
-                    {zone.pricePerPixel} $PIXEL/px
+                  <span className="text-sm text-gray-400">Tier at purchase</span>
+                  <span className="font-mono text-sm text-white">
+                    {zone.pricePerPixel} $BLOK/px
                   </span>
                 </div>
               </CardContent>
             </Card>
 
             {/* Owner */}
-            <Card shadow="red" className="p-4">
+            <Card variant="glow" className="p-4">
               <CardHeader className="p-0 mb-2">
-                <CardTitle className="text-sm">Owner</CardTitle>
+                <CardTitle className="text-sm text-white">Owner</CardTitle>
               </CardHeader>
               <CardContent className="p-0">
-                <p className="font-mono text-sm break-all">{zone.wallet}</p>
-                <p className="text-ink/50 text-xs mt-1">
+                <p className="font-mono text-sm text-white break-all">{zone.wallet}</p>
+                <p className="text-gray-500 text-xs mt-1">
                   Claimed{" "}
                   {zone.paidAt
                     ? new Date(zone.paidAt).toLocaleDateString()
@@ -215,6 +219,29 @@ export default async function ZonePage({ params }: ZonePageProps) {
                 </p>
               </CardContent>
             </Card>
+
+            {/* Edit image (only visible to owner) */}
+            {(zone.status === "PAID" || zone.status === "DRAWN") && (
+              <ZoneEditImage
+                zoneId={zone.id}
+                zoneWallet={zone.wallet}
+                zoneSize={{ w: zone.w, h: zone.h }}
+                hasImage={!!zone.imageUrl}
+              />
+            )}
+
+            {/* Marketplace - Sell (owner) or Buy (non-owner) */}
+            {(zone.status === "PAID" || zone.status === "DRAWN") && (
+              <>
+                <SellButton
+                  zoneId={zone.id}
+                  zoneWallet={zone.wallet}
+                  zoneTotalPrice={zone.totalPrice}
+                  zonePurchaseTier={zone.purchaseTier}
+                />
+                <BuyButton zoneId={zone.id} zoneWallet={zone.wallet} />
+              </>
+            )}
 
             {/* Transaction */}
             {explorerUrl && (
@@ -224,21 +251,24 @@ export default async function ZonePage({ params }: ZonePageProps) {
                 </a>
               </Button>
             )}
+
+            {/* Share */}
+            <ShareButtons title={zone.projectName || `Zone (${zone.x}, ${zone.y})`} />
           </div>
         </div>
 
         {/* Board preview placeholder */}
-        <Card shadow="blue" className="mt-12 p-6">
+        <Card variant="glow" className="mt-12 p-6">
           <CardHeader className="p-0 mb-4">
-            <CardTitle className="text-sm">Location on board</CardTitle>
+            <CardTitle className="text-sm text-white">Location on board</CardTitle>
           </CardHeader>
           <CardContent className="p-0">
-            <div className="h-48 bg-grid-line rounded-lg flex items-center justify-center border-2 border-ink/10">
-              <span className="font-pixel text-[10px] text-ink/30 uppercase">
+            <div className="h-48 bg-gray-800 rounded-[4px] flex items-center justify-center border border-gray-700">
+              <span className="font-mono text-[10px] text-gray-600 uppercase">
                 Mini board preview coming soon
               </span>
             </div>
-            <p className="text-sm text-ink/60 mt-3 text-center">
+            <p className="text-sm text-gray-500 mt-3 text-center">
               Zone at position ({zone.x}, {zone.y}) • {zone.w}×{zone.h} cells
             </p>
           </CardContent>

@@ -66,27 +66,27 @@ export default function RecoverPage() {
   }
 
   return (
-    <main className="min-h-screen bg-paper">
+    <main className="min-h-screen bg-black">
       <Nav />
 
       <div className="max-w-2xl mx-auto px-6 py-16">
         <Eyebrow className="mb-4">PAYMENT RECOVERY</Eyebrow>
-        <h1 className="font-display text-display-lg text-ink mb-4">
+        <h1 className="font-display text-4xl font-bold text-white mb-4">
           Lost your zone?
         </h1>
-        <p className="text-ink/70 mb-8">
+        <p className="text-gray-400 mb-8">
           If you made a payment but your zone wasn&apos;t created, enter your
           transaction hash below. We&apos;ll verify the payment and help you
           recover your pixels.
         </p>
 
         {/* Search form */}
-        <Card shadow="blue" className="p-6 mb-8">
+        <Card variant="glow" className="p-6 mb-8">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label
                 htmlFor="txHash"
-                className="block font-pixel text-[10px] text-ink/60 uppercase mb-2"
+                className="block font-mono text-[10px] text-gray-500 uppercase mb-2"
               >
                 Transaction Hash
               </label>
@@ -96,7 +96,7 @@ export default function RecoverPage() {
                 value={txHash}
                 onChange={(e) => setTxHash(e.target.value)}
                 placeholder="0x..."
-                className="w-full px-4 py-3 border-2 border-ink rounded-lg font-mono text-sm focus:outline-none focus:ring-2 focus:ring-blue"
+                className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-[4px] font-mono text-sm text-white focus:outline-none focus:border-lime focus:shadow-[0_0_0_3px_rgba(204,253,3,0.15)]"
               />
             </div>
 
@@ -108,12 +108,9 @@ export default function RecoverPage() {
 
         {/* Result */}
         {result && (
-          <Card
-            shadow={result.success ? "yellow" : "red"}
-            className="p-6"
-          >
+          <Card variant="glow" className="p-6">
             <CardHeader className="p-0 mb-4">
-              <CardTitle className="text-sm flex items-center gap-3">
+              <CardTitle className="text-sm text-white flex items-center gap-3">
                 {result.success ? "Payment Found" : "Error"}
                 {result.data && (
                   <Chip
@@ -126,34 +123,34 @@ export default function RecoverPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="p-0 space-y-4">
-              <p className="text-ink/70">{result.message}</p>
+              <p className="text-gray-400">{result.message}</p>
 
               {result.data && (
-                <div className="bg-paper rounded-lg p-4 space-y-3 text-sm">
+                <div className="bg-gray-800 rounded-[4px] p-4 space-y-3 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-ink/60">From:</span>
-                    <span className="font-mono truncate max-w-[200px]">
+                    <span className="text-gray-500">From:</span>
+                    <span className="font-mono text-white truncate max-w-[200px]">
                       {result.data.from}
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-ink/60">Amount:</span>
-                    <span className="font-pixel">{result.data.amount} $PIXEL</span>
+                    <span className="text-gray-500">Amount:</span>
+                    <span className="font-mono text-white">{result.data.amount} $BLOK</span>
                   </div>
                   {result.data.memo && (
                     <div className="flex justify-between">
-                      <span className="text-ink/60">Memo:</span>
-                      <span className="font-mono truncate max-w-[200px]">
+                      <span className="text-gray-500">Memo:</span>
+                      <span className="font-mono text-white truncate max-w-[200px]">
                         {result.data.memo}
                       </span>
                     </div>
                   )}
                   {result.data.zoneId && (
                     <div className="flex justify-between">
-                      <span className="text-ink/60">Zone:</span>
+                      <span className="text-gray-500">Zone:</span>
                       <a
                         href={`/zone/${result.data.zoneId}`}
-                        className="text-blue hover:underline"
+                        className="text-lime hover:underline"
                       >
                         View zone →
                       </a>
@@ -163,21 +160,21 @@ export default function RecoverPage() {
               )}
 
               {result.data?.status === "orphan" && (
-                <div className="bg-yellow/20 rounded-lg p-4">
-                  <p className="text-sm font-medium mb-2">
+                <div className="bg-lime/10 border border-lime/30 rounded-[4px] p-4">
+                  <p className="text-sm font-medium text-white mb-2">
                     Your payment was received but not linked to a zone.
                   </p>
-                  <p className="text-sm text-ink/70">
+                  <p className="text-sm text-gray-400">
                     This usually happens when a reservation expired before the
                     transaction confirmed. Your case has been added to our
                     recovery queue. Contact{" "}
                     <a
-                      href="https://twitter.com/PIXELBOARD"
-                      className="text-blue hover:underline"
+                      href="https://twitter.com/BLOKR"
+                      className="text-lime hover:underline"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      @PIXELBOARD
+                      @BLOKR
                     </a>{" "}
                     on X with this transaction hash for manual assistance.
                   </p>
@@ -189,14 +186,14 @@ export default function RecoverPage() {
 
         {/* Help text */}
         <div className="mt-12 text-center">
-          <p className="text-sm text-ink/50 mb-4">
+          <p className="text-sm text-gray-500 mb-4">
             Can&apos;t find your transaction?
           </p>
           <a
             href="https://robinhoodchain.blockscout.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue hover:underline text-sm"
+            className="text-lime hover:underline text-sm"
           >
             Search on Robinhood Chain Explorer →
           </a>

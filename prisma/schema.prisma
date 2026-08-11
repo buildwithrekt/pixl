@@ -7,7 +7,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 // ========================================
@@ -23,7 +22,7 @@ model Zone {
   h             Int        // height in cells (min 1)
 
   // Owner
-  wallet        String     // Solana wallet address
+  wallet        String     // Wallet address (current owner)
 
   // Status flow: reserved → paid → drawn
   status        ZoneStatus @default(RESERVED)
@@ -32,6 +31,11 @@ model Zone {
   pricePerPixel Int        // $PIXEL per pixel at reservation
   totalPixels   Int        // w * h * 64 (cells to pixels)
   totalPrice    BigInt     // pricePerPixel * totalPixels
+
+  // Marketplace: tier at purchase (for floor price calculation)
+  purchaseTier       Int?  // Tier when first bought (1-6)
+  purchaseMultiplier Int?  // Multiplier at purchase (1,2,4,8,16,32)
+  previousOwner      String? // Previous owner (set on resale)
 
   // Reservation
   reservationId String     @unique // UUID for payment memo
@@ -43,13 +47,17 @@ model Zone {
   paidAt        DateTime?
 
   // Content
-  imageUrl      String?    // Uploaded image URL
-  projectName   String?    // Optional project name
-  projectLink   String?    // Optional link
+  imageUrl         String?    // Resized image URL (for canvas composite)
+  originalImageUrl String?    // Original full-resolution image URL (for gallery/preview)
+  projectName      String?    // Optional project name
+  projectLink      String?    // Optional link
 
   // Metadata
   createdAt     DateTime   @default(now())
   updatedAt     DateTime   @updatedAt
+
+  // Relations
+  listing       Listing?   // Active marketplace listing
 
   @@index([wallet])
   @@index([status])
@@ -107,9 +115,14 @@ enum EventType {
   ZONE_DRAWN
   ZONE_EXPIRED
   ZONE_REFUNDED
+  ZONE_LISTED
+  ZONE_UNLISTED
+  ZONE_SOLD
   PRICE_TIER_CHANGE
   BURN_EXECUTED
   COMPOSITE_UPDATED
+  PAYMENT_RECOVERED
+  ORPHAN_PAYMENT
 }
 
 // ========================================
@@ -167,5 +180,81 @@ model Snapshot {
 
   createdAt   DateTime @default(now())
 
+  @@index([createdAt])
+}
+
+// ========================================
+// Listing - Zone for sale on marketplace
+// ========================================
+model Listing {
+  id          String        @id @default(cuid())
+
+  // Zone reference
+  zoneId      String        @unique
+  zone        Zone          @relation(fields: [zoneId], references: [id])
+
+  // Seller
+  seller      String        // Wallet address (must match zone.wallet)
+
+  // Pricing
+  askingPrice BigInt        // $PIXEL asking price
+  floorPrice  BigInt        // Calculated floor (cannot sell below)
+
+  // Metadata for floor calculation
+  purchaseTier       Int    // Tier when zone was originally bought
+  purchaseMultiplier Int    // Multiplier at purchase (1,2,4,8,16,32)
+
+  // Status
+  status      ListingStatus @default(ACTIVE)
+
+  // Timestamps
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  expiresAt   DateTime      // Auto-expire after 30 days
+
+  @@index([seller])
+  @@index([status])
+  @@index([askingPrice])
+  @@index([expiresAt])
+}
+
+enum ListingStatus {
+  ACTIVE      // Available for purchase
+  SOLD        // Sale completed
+  CANCELLED   // Seller cancelled
+  EXPIRED     // Listing expired
+}
+
+// ========================================
+// Sale - Completed marketplace transaction
+// ========================================
+model Sale {
+  id             String    @id @default(cuid())
+
+  // References
+  zoneId         String
+  listingId      String?   // Null if direct transfer (future)
+
+  // Parties
+  seller         String    // Seller wallet
+  buyer          String    // Buyer wallet
+
+  // Pricing
+  salePrice      BigInt    // Final sale price
+  platformFee    BigInt    // 5% fee
+  sellerProceeds BigInt    // 95% to seller
+
+  // Tier context
+  tierAtSale     Int
+
+  // Payment verification
+  txSignature    String?   // On-chain tx
+  blockTime      DateTime?
+
+  createdAt      DateTime  @default(now())
+
+  @@index([zoneId])
+  @@index([seller])
+  @@index([buyer])
   @@index([createdAt])
 }

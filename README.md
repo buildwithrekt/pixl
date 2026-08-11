@@ -1,12 +1,12 @@
-# PIXELBOARD
+# BLOK
 
-A collaborative 1,024×1,024 pixel canvas on Solana. Users and memecoin projects buy rectangular zones and fill them with pixel art or banners. Payment is on-chain (SPL transfer of $PIXEL token to a public treasury), while the canvas state lives off-chain in Postgres.
+A collaborative 1,024×1,024 pixel canvas on Solana. Users and memecoin projects buy rectangular zones and fill them with pixel art or banners. Payment is on-chain (SPL transfer of $BLOK token to a public treasury), while the canvas state lives off-chain in Postgres.
 
 ## Overview
 
 - **Canvas**: 1,024×1,024 pixels (1,048,576 total pixels)
 - **Grid**: 8×8 pixel cells (128×128 grid = 16,384 cells)
-- **Payment**: On-chain $PIXEL token transfers
+- **Payment**: On-chain $BLOK token transfers
 - **Pricing**: Dynamic tiers based on canvas fill percentage
 - **Endgame**: At 100% fill, the final image is minted as a 1/1 NFT
 
@@ -51,7 +51,7 @@ src/
 │   ├── board/               # Interactive canvas
 │   ├── gallery/             # Browse all zones
 │   ├── how-it-works/        # How it works page
-│   ├── pixel/               # $PIXEL token info
+│   ├── blok/                # $BLOK token info
 │   ├── recover/             # Payment recovery page
 │   ├── zone/[id]/           # Individual zone view
 │   ├── privacy/             # Privacy policy
@@ -143,7 +143,7 @@ See `.env.example` for all required variables:
 - `NEXT_PUBLIC_CHAIN_ENV` - "testnet" or "mainnet"
 - `NEXT_PUBLIC_ALCHEMY_API_KEY` - Alchemy API key
 - `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` - WalletConnect project ID
-- `NEXT_PUBLIC_PIXEL_TOKEN_ADDRESS` - $PIXEL ERC20 contract
+- `NEXT_PUBLIC_BLOK_TOKEN_ADDRESS` - $BLOK ERC20 contract
 - `TREASURY_WALLET` - Treasury wallet address
 - `ALCHEMY_WEBHOOK_SIGNING_KEY` - Webhook verification
 - `BLOB_READ_WRITE_TOKEN` - Vercel Blob storage

@@ -14,7 +14,7 @@ export const expireReservationsFunction = inngest.createFunction(
 
     const result = await step.run("expire-old-reservations", async () => {
       // Find and update expired reservations
-      const expired = await prisma.zone.updateMany({
+      const expired = await prisma!.zone.updateMany({
         where: {
           status: "RESERVED",
           expiresAt: { lt: new Date() },
@@ -26,14 +26,14 @@ export const expireReservationsFunction = inngest.createFunction(
 
       if (expired.count > 0) {
         // Log events for expired zones
-        const expiredZones = await prisma.zone.findMany({
+        const expiredZones = await prisma!.zone.findMany({
           where: { status: "EXPIRED" },
           orderBy: { updatedAt: "desc" },
           take: expired.count,
         })
 
         for (const zone of expiredZones) {
-          await prisma.event.create({
+          await prisma!.event.create({
             data: {
               type: "ZONE_EXPIRED",
               zoneId: zone.id,
@@ -78,7 +78,7 @@ export const checkPriceTierFunction = inngest.createFunction(
     }
 
     const result = await step.run("check-tier", async () => {
-      const priceState = await prisma.priceState.findUnique({
+      const priceState = await prisma!.priceState.findUnique({
         where: { id: "singleton" },
       })
 
@@ -93,26 +93,27 @@ export const checkPriceTierFunction = inngest.createFunction(
         const newPrice = priceState.basePrice * newMultiplier
 
         // Update price state
-        const history = (priceState.history as Array<Record<string, unknown>>) || []
+        const existingHistory = Array.isArray(priceState.history) ? priceState.history : []
+        const newHistory = [
+          ...existingHistory,
+          {
+            tier: Number(newTier),
+            price: Number(newPrice),
+            timestamp: new Date().toISOString(),
+            pixelsSold: Number(priceState.pixelsSold),
+          },
+        ]
 
-        await prisma.priceState.update({
+        await prisma!.priceState.update({
           where: { id: "singleton" },
           data: {
             currentTier: newTier,
-            history: [
-              ...history,
-              {
-                tier: newTier,
-                price: newPrice,
-                timestamp: new Date().toISOString(),
-                pixelsSold: priceState.pixelsSold,
-              },
-            ],
+            history: newHistory,
           },
         })
 
         // Log tier change event
-        await prisma.event.create({
+        await prisma!.event.create({
           data: {
             type: "PRICE_TIER_CHANGE",
             data: {

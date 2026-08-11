@@ -39,66 +39,68 @@ export function PayStep({
   return (
     <div className="space-y-6">
       {/* TTL Countdown */}
-      <Card
-        shadow={isUrgent ? "red" : "blue"}
-        className={`p-4 text-center ${isUrgent ? "bg-red/10" : ""}`}
+      <div
+        className={`p-4 text-center rounded-[4px] border ${
+          isUrgent ? "bg-red-500/10 border-red-500" : "bg-gray-800 border-gray-700"
+        }`}
       >
-        <span className="font-pixel text-[10px] text-ink/60 uppercase">
+        <span className="font-mono text-[10px] text-gray-500 uppercase">
           Reservation expires in
         </span>
         <div
-          className={`font-pixel text-4xl mt-2 ${
-            isUrgent ? "text-red" : "text-ink"
+          className={`font-mono text-4xl mt-2 ${
+            isUrgent ? "text-red-500" : "text-lime"
           } ${isExpired ? "animate-pulse" : ""}`}
         >
           {isExpired ? "EXPIRED" : formatCountdown(minutes, seconds)}
         </div>
         {isUrgent && !isExpired && (
-          <p className="text-sm text-red mt-2">Hurry! Time is running out.</p>
+          <p className="text-sm text-red-500 mt-2">Hurry! Time is running out.</p>
         )}
-      </Card>
+      </div>
 
       {/* Amount to pay */}
-      <Card shadow="yellow" className="p-4">
+      <div className="bg-lime/10 border border-lime/30 rounded-[4px] p-4">
         <CardHeader className="p-0 mb-4">
-          <CardTitle className="text-sm flex items-center gap-2">
+          <CardTitle className="text-sm flex items-center gap-2 text-lime">
             Amount to pay
             <Sprite map={SPRITE_MAPS.fire} pixelSize={3} />
           </CardTitle>
         </CardHeader>
         <CardContent className="p-0">
           <div className="text-center">
-            <span className="font-display text-3xl font-bold">
+            <span className="font-display text-3xl font-bold text-white">
               {Number(reservation.totalPrice).toLocaleString()}
             </span>
-            <span className="font-pixel text-lg ml-2">$PIXEL</span>
+            <span className="font-mono text-lg ml-2 text-lime">$BLOK</span>
           </div>
         </CardContent>
-      </Card>
+      </div>
 
       {/* Transaction status */}
       {paymentStatus !== "idle" && (
-        <Card
-          shadow={paymentStatus === "error" ? "red" : "blue"}
-          className="p-4"
+        <div
+          className={`p-4 rounded-[4px] border ${
+            paymentStatus === "error" ? "bg-red-500/10 border-red-500" : "bg-gray-800 border-gray-700"
+          }`}
         >
           <div className="flex items-center gap-3">
             {paymentStatus === "pending" && (
               <>
-                <div className="w-4 h-4 border-2 border-ink border-t-transparent rounded-full animate-spin" />
-                <span className="text-sm">Waiting for signature...</span>
+                <div className="w-4 h-4 border-2 border-lime border-t-transparent rounded-full animate-spin" />
+                <span className="text-sm text-white">Waiting for signature...</span>
               </>
             )}
             {paymentStatus === "confirming" && (
               <>
-                <div className="w-4 h-4 border-2 border-blue border-t-transparent rounded-full animate-spin" />
-                <span className="text-sm">Confirming transaction...</span>
+                <div className="w-4 h-4 border-2 border-lime border-t-transparent rounded-full animate-spin" />
+                <span className="text-sm text-white">Confirming transaction...</span>
               </>
             )}
             {paymentStatus === "error" && (
               <>
-                <span className="text-red font-bold">!</span>
-                <span className="text-sm text-red">{error}</span>
+                <span className="text-red-500 font-bold">!</span>
+                <span className="text-sm text-red-500">{error}</span>
               </>
             )}
           </div>
@@ -108,12 +110,12 @@ export function PayStep({
               href={explorerUrl!}
               target="_blank"
               rel="noopener noreferrer"
-              className="block mt-3 text-sm text-blue hover:underline truncate"
+              className="block mt-3 text-sm text-lime hover:underline truncate"
             >
               View on explorer: {txHash.slice(0, 10)}...{txHash.slice(-8)}
             </a>
           )}
-        </Card>
+        </div>
       )}
 
       {/* Pay button */}
@@ -129,13 +131,13 @@ export function PayStep({
           "Reservation expired"
         ) : (
           <>
-            Pay {Number(reservation.totalPrice).toLocaleString()} $PIXEL
+            Pay {Number(reservation.totalPrice).toLocaleString()} $BLOK
           </>
         )}
       </Button>
 
       {/* Note */}
-      <p className="text-xs text-ink/50 text-center">
+      <p className="text-xs text-gray-500 text-center">
         Payment is sent to the treasury and burned every 24h. Your zone will
         appear on the canvas immediately after confirmation.
       </p>

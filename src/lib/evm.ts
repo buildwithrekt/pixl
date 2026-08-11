@@ -26,7 +26,7 @@ export function getPublicClient() {
   })
 }
 
-// Get $PIXEL token address
+// Get $BLOK token address
 export function getPixelTokenAddress(): `0x${string}` {
   const address = process.env.NEXT_PUBLIC_PIXEL_TOKEN_ADDRESS
   if (!address) throw new Error("PIXEL_TOKEN_ADDRESS not configured")

@@ -23,11 +23,6 @@ const faqs = [
     answer:
       "In V1, zones are permanent and immutable. Once placed, your pixels stay forever.",
   },
-  {
-    question: "Is this actually on-chain?",
-    answer:
-      "Payments and burns are 100% on-chain. The canvas itself is stored off-chain. We're honest about this.",
-  },
 ]
 
 // Animation variants
@@ -56,12 +51,10 @@ const itemVariants = {
 function BentoCard({
   children,
   className = "",
-  shadow = "red" as const,
   delay = 0,
 }: {
   children: React.ReactNode
   className?: string
-  shadow?: "red" | "blue" | "yellow"
   delay?: number
 }) {
   const ref = useRef(null)
@@ -75,7 +68,7 @@ function BentoCard({
       transition={{ duration: 0.6, delay, ease: [0.25, 0.4, 0.25, 1] as [number, number, number, number] }}
       className={className}
     >
-      <Card shadow={shadow} className="h-full p-6 flex flex-col overflow-hidden">
+      <Card variant="glow" className="h-full p-4 flex flex-col overflow-hidden">
         {children}
       </Card>
     </motion.div>
@@ -84,16 +77,16 @@ function BentoCard({
 
 export default function HowItWorksPage() {
   return (
-    <main className="min-h-screen bg-paper">
+    <main className="min-h-screen bg-black">
       <Nav />
 
       {/* Hero */}
       <section className="px-6 py-16 max-w-5xl mx-auto text-center">
         <Eyebrow className="mb-4">THE PROCESS</Eyebrow>
-        <h1 className="font-display text-display-xl text-ink mb-6">
+        <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
           How it works
         </h1>
-        <p className="font-body text-lg text-ink/70 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-400 max-w-2xl mx-auto">
           From wallet connection to pixel immortality. No complicated contracts,
           no hidden fees.
         </p>
@@ -105,52 +98,47 @@ export default function HowItWorksPage() {
           {/* Step 01 - Connect Wallet - Large */}
           <BentoCard
             className="col-span-4 md:col-span-3 row-span-2"
-            shadow="red"
             delay={0}
           >
-            <CardHeader className="p-0 mb-4">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="font-pixel text-3xl text-ink">01</span>
-              </div>
-              <CardTitle className="text-lg">Connect your wallet</CardTitle>
-            </CardHeader>
-            <CardContent className="p-0 flex-1 flex flex-col justify-between">
-              <p className="text-sm text-ink/70 leading-relaxed">
-                Connect with MetaMask, Coinbase Wallet, or WalletConnect. Make
-                sure you&apos;re on Robinhood Chain.
-              </p>
-              <WalletLogos size={32} />
-            </CardContent>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="font-mono text-3xl text-lime">01</span>
+            </div>
+            <CardTitle className="text-lg text-white mb-3">Connect your wallet</CardTitle>
+            <p className="text-xs text-gray-400 leading-relaxed mb-4">
+              Connect with MetaMask, Coinbase Wallet, or WalletConnect. Make
+              sure you&apos;re on Robinhood Chain.
+            </p>
+            <WalletLogos size={32} />
           </BentoCard>
 
           {/* Grid specs */}
-          <BentoCard className="col-span-2 md:col-span-1" shadow="yellow" delay={0.1}>
+          <BentoCard className="col-span-2 md:col-span-1" delay={0.1}>
             <div className="flex-1 flex flex-col justify-center items-center text-center">
-              <span className="font-pixel text-2xl text-ink">128×128</span>
-              <span className="font-pixel text-[9px] text-ink/60 uppercase tracking-wider mt-2">
+              <span className="font-mono text-2xl text-lime">128×128</span>
+              <span className="font-mono text-[9px] text-gray-500 uppercase tracking-wider mt-2">
                 Grid cells
               </span>
             </div>
           </BentoCard>
 
           {/* Pixel size */}
-          <BentoCard className="col-span-2 md:col-span-2" shadow="blue" delay={0.15}>
+          <BentoCard className="col-span-2 md:col-span-2" delay={0.15}>
             <div className="flex-1 flex flex-col justify-center items-center text-center">
-              <span className="font-pixel text-2xl text-ink">8×8</span>
-              <span className="font-pixel text-[9px] text-ink/60 uppercase tracking-wider mt-2">
+              <span className="font-mono text-2xl text-lime">8×8</span>
+              <span className="font-mono text-[9px] text-gray-500 uppercase tracking-wider mt-2">
                 Pixels per cell
               </span>
             </div>
           </BentoCard>
 
           {/* Step 02 - Pick Zone */}
-          <BentoCard className="col-span-4 md:col-span-3" shadow="blue" delay={0.2}>
+          <BentoCard className="col-span-4 md:col-span-3" delay={0.2}>
             <div className="flex-1 flex flex-col justify-center">
               <div className="flex items-center gap-3 mb-2">
-                <span className="font-pixel text-2xl text-ink">02</span>
+                <span className="font-mono text-2xl text-lime">02</span>
               </div>
-              <CardTitle className="text-base mb-2">Pick your zone</CardTitle>
-              <p className="text-sm text-ink/70">
+              <CardTitle className="text-base text-white mb-2">Pick your zone</CardTitle>
+              <p className="text-xs text-gray-400">
                 Select a rectangular area on the 1024×1024 canvas. Min 8×8
                 pixels, snaps to grid.
               </p>
@@ -158,13 +146,13 @@ export default function HowItWorksPage() {
           </BentoCard>
 
           {/* Step 03 - Reserve & Upload */}
-          <BentoCard className="col-span-4 md:col-span-3" shadow="yellow" delay={0.25}>
+          <BentoCard className="col-span-4 md:col-span-3" delay={0.25}>
             <div className="flex-1 flex flex-col justify-center">
               <div className="flex items-center gap-3 mb-2">
-                <span className="font-pixel text-2xl text-ink">03</span>
+                <span className="font-mono text-2xl text-lime">03</span>
               </div>
-              <CardTitle className="text-base mb-2">Reserve & upload</CardTitle>
-              <p className="text-sm text-ink/70">
+              <CardTitle className="text-base text-white mb-2">Reserve & upload</CardTitle>
+              <p className="text-xs text-gray-400">
                 10-minute reservation window. Price locked. Upload any image —
                 PNG, JPG, GIF, WebP.
               </p>
@@ -172,70 +160,64 @@ export default function HowItWorksPage() {
           </BentoCard>
 
           {/* TTL */}
-          <BentoCard className="col-span-2 md:col-span-2" shadow="red" delay={0.3}>
+          <BentoCard className="col-span-2 md:col-span-2" delay={0.3}>
             <div className="flex-1 flex flex-col justify-center items-center text-center">
-              <span className="font-pixel text-3xl text-ink">10</span>
-              <span className="font-pixel text-[9px] text-ink/60 uppercase tracking-wider mt-2">
+              <span className="font-mono text-3xl text-lime">10</span>
+              <span className="font-mono text-[9px] text-gray-500 uppercase tracking-wider mt-2">
                 Min TTL
               </span>
             </div>
           </BentoCard>
 
           {/* Total pixels */}
-          <BentoCard className="col-span-2 md:col-span-1" shadow="yellow" delay={0.35}>
+          <BentoCard className="col-span-2 md:col-span-1" delay={0.35}>
             <div className="flex-1 flex flex-col justify-center items-center text-center">
-              <span className="font-pixel text-lg text-ink">1M+</span>
-              <span className="font-pixel text-[9px] text-ink/60 uppercase tracking-wider mt-2">
+              <span className="font-mono text-lg text-lime">1M+</span>
+              <span className="font-mono text-[9px] text-gray-500 uppercase tracking-wider mt-2">
                 Pixels
               </span>
             </div>
           </BentoCard>
 
-          {/* Step 04 - Pay in $PIXEL */}
+          {/* Step 04 - Pay in $BLOK */}
           <BentoCard
             className="col-span-4 md:col-span-3 row-span-2"
-            shadow="red"
             delay={0.4}
           >
-            <CardHeader className="p-0 mb-4">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="font-pixel text-3xl text-ink">04</span>
-              </div>
-              <CardTitle className="text-lg">Pay in $PIXEL</CardTitle>
-            </CardHeader>
-            <CardContent className="p-0 flex-1 flex flex-col justify-between">
-              <p className="text-sm text-ink/70 leading-relaxed">
-                Confirm your payment in $PIXEL tokens. Price = pixels × tier
-                rate. 100% on-chain, transaction linked to your zone.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <Chip>TIER 1: 150 $PIXEL</Chip>
-                <Chip variant="secondary">TIER 5: 2,400 $PIXEL</Chip>
-              </div>
-            </CardContent>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="font-mono text-3xl text-lime">04</span>
+            </div>
+            <CardTitle className="text-lg text-white mb-3">Pay in $BLOK</CardTitle>
+            <p className="text-xs text-gray-400 leading-relaxed mb-4">
+              Confirm your payment in $BLOK tokens. Price = pixels × tier
+              rate. 100% on-chain, transaction linked to your zone.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Chip>TIER 1: 150 $BLOK</Chip>
+              <Chip variant="secondary">TIER 5: 2,400 $BLOK</Chip>
+            </div>
           </BentoCard>
 
           {/* Step 05 - Burn */}
           <BentoCard
             className="col-span-4 md:col-span-3 row-span-2"
-            shadow="yellow"
             delay={0.45}
           >
-            <div className="flex-1 bg-ink rounded-xl -m-6 p-6 flex flex-col">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="font-pixel text-3xl text-paper">05</span>
+            <div className="bg-lime/10 border border-lime/30 rounded-[4px] p-6 h-full">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="font-mono text-3xl text-lime">05</span>
                 <Sprite map={SPRITE_MAPS.fire} pixelSize={5} />
               </div>
-              <CardTitle className="text-lg text-paper mb-4">
+              <CardTitle className="text-lg text-lime mb-3">
                 Tokens get burned
               </CardTitle>
-              <p className="text-sm text-paper/70 leading-relaxed flex-1">
-                All collected $PIXEL tokens are sent to the treasury and
+              <p className="text-xs text-gray-400 leading-relaxed mb-4">
+                All collected $BLOK tokens are sent to the treasury and
                 burned every 24 hours. Your pixels live forever on the canvas.
               </p>
-              <div className="flex items-center gap-4 mt-4">
+              <div className="flex items-center gap-4">
                 <Chip>100% BURN</Chip>
-                <span className="font-pixel text-[10px] text-yellow uppercase">
+                <span className="font-mono text-[10px] text-lime uppercase">
                   Zero mercy on supply
                 </span>
               </div>
@@ -245,7 +227,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Visual flow */}
-      <section className="px-6 py-12 bg-ink">
+      <section className="px-6 py-12 bg-gray-900">
         <motion.div
           className="max-w-4xl mx-auto text-center"
           initial={{ opacity: 0 }}
@@ -253,7 +235,7 @@ export default function HowItWorksPage() {
           viewport={{ once: true }}
         >
           <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">
-            {["Wallet", "Zone", "Upload", "$PIXEL", "Burn", "Forever"].map(
+            {["Wallet", "Zone", "Upload", "$BLOK", "Burn", "Forever"].map(
               (item, i) => (
                 <motion.div
                   key={item}
@@ -274,7 +256,7 @@ export default function HowItWorksPage() {
                     {item}
                   </Chip>
                   {i < 5 && (
-                    <span className="font-pixel text-paper text-lg">→</span>
+                    <span className="font-mono text-lime text-lg">→</span>
                   )}
                 </motion.div>
               )
@@ -286,16 +268,16 @@ export default function HowItWorksPage() {
       {/* FAQs */}
       <section className="px-6 py-16 max-w-5xl mx-auto">
         <div className="text-center mb-10">
-          <span className="font-pixel text-[11px] text-blue uppercase tracking-wider">
+          <span className="font-mono text-[11px] text-lime uppercase tracking-wider">
             FAQ
           </span>
-          <h2 className="font-display text-display-lg text-ink mt-2">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-white mt-2">
             Questions? Answers.
           </h2>
         </div>
 
         <motion.div
-          className="grid md:grid-cols-3 gap-4"
+          className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -303,19 +285,14 @@ export default function HowItWorksPage() {
         >
           {faqs.map((faq, i) => (
             <motion.div key={i} variants={itemVariants}>
-              <Card
-                shadow={
-                  ["red", "blue", "yellow"][i % 3] as "red" | "blue" | "yellow"
-                }
-                className="p-6 h-full"
-              >
+              <Card variant="glow" className="p-6">
                 <CardHeader className="p-0 mb-3">
-                  <CardTitle className="text-sm leading-snug">
+                  <CardTitle className="text-xs text-white leading-snug">
                     {faq.question}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
-                  <p className="font-body text-sm text-ink/70 leading-relaxed">
+                  <p className="text-xs text-gray-400 leading-relaxed">
                     {faq.answer}
                   </p>
                 </CardContent>
@@ -326,12 +303,12 @@ export default function HowItWorksPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 py-16 bg-yellow/20">
+      <section className="px-6 py-16 bg-gray-900">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-display-lg text-ink mb-4">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to claim your spot?
           </h2>
-          <p className="font-body text-ink/70 mb-8">
+          <p className="text-gray-400 mb-8">
             Pick your zone on the board and become part of pixel history.
           </p>
           <div className="flex items-center justify-center gap-4">
@@ -339,7 +316,7 @@ export default function HowItWorksPage() {
               <Link href="/board">Open the board</Link>
             </Button>
             <Button variant="secondary" size="lg" asChild>
-              <Link href="/pixel">Learn about $PIXEL</Link>
+              <Link href="/blokr">Learn about $BLOK</Link>
             </Button>
           </div>
         </div>

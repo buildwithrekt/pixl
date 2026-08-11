@@ -11,9 +11,6 @@ const PALETTE: Record<string, string> = {
   "K": "var(--ink)",
   "W": "#FFFFFF",
   "P": "var(--paper)",
-  "G": "#ccff00",      // Robinhood green
-  "D": "#1a472a",      // Dark swamp green
-  "L": "#7cb518",      // Lime green
 }
 
 interface SpriteProps {
@@ -116,23 +113,5 @@ export const SPRITE_MAPS = {
     "KKKKK",
     "..K..",
     "..K..",
-  ],
-
-  frog: [
-    ".G..G.",
-    "GWGGWG",
-    "GGGGGG",
-    "GLLLGG",
-    ".GGGG.",
-    "G....G",
-  ],
-
-  frogBlink: [
-    ".G..G.",
-    "GGGGGG",
-    "GGGGGG",
-    "GLLLGG",
-    ".GGGG.",
-    "G....G",
   ],
 }

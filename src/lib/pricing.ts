@@ -1,4 +1,4 @@
-// PIXELBOARD Pricing Logic
+// BLOKR Pricing Logic
 // Price per pixel rises as the board fills
 
 const TOTAL_PIXELS = 1024 * 1024 // 1,048,576 pixels

@@ -1,5 +1,5 @@
-import { http, createConfig } from "wagmi"
-import { injected, coinbaseWallet, walletConnect } from "wagmi/connectors"
+import { http, createConfig, createStorage } from "wagmi"
+import { injected, coinbaseWallet } from "wagmi/connectors"
 import { defineChain } from "viem"
 
 // Define Robinhood Chain
@@ -58,14 +58,18 @@ export const config = createConfig({
   connectors: [
     injected(), // MetaMask, Rabby, etc.
     coinbaseWallet({
-      appName: "PIXELBOARD",
-    }),
-    walletConnect({
-      projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "demo",
+      appName: "BLOKR",
     }),
   ],
   transports: {
     [robinhoodChain.id]: http(),
     [robinhoodChainTestnet.id]: http(),
   },
+  // Persist connection state in localStorage
+  storage: createStorage({
+    storage: typeof window !== "undefined" ? window.localStorage : undefined,
+    key: "blok:wagmi",
+  }),
+  // Sync state across tabs
+  syncConnectedChain: true,
 })

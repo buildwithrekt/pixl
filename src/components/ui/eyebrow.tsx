@@ -9,9 +9,9 @@ const Eyebrow = React.forwardRef<HTMLSpanElement, EyebrowProps>(
       ref={ref}
       className={cn(
         "inline-flex items-center",
-        "font-pixel text-[11px] uppercase tracking-wider",
-        "text-blue bg-white border-2 border-blue rounded-full",
-        "px-4 py-2",
+        "font-mono text-[11px] uppercase tracking-wider",
+        "text-lime border border-lime rounded-[4px]",
+        "px-3 py-1",
         className
       )}
       {...props}

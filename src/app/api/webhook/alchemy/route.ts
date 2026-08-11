@@ -156,12 +156,14 @@ export async function POST(request: NextRequest) {
         continue
       }
 
-      // Update zone status to PAID
-      await prisma.$transaction(async (tx: typeof prisma) => {
+      // Update zone status to PAID (or DRAWN if image already uploaded)
+      const newStatus = zone.imageUrl ? "DRAWN" : "PAID"
+
+      await prisma.$transaction(async (tx) => {
         await tx.zone.update({
           where: { id: zone.id },
           data: {
-            status: "PAID",
+            status: newStatus,
             txSignature: activity.hash,
             blockTime: new Date(),
             paidAt: new Date(),

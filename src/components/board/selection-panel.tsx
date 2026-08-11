@@ -14,6 +14,7 @@ interface SelectionPanelProps {
   onReserve: () => void
   isConnected: boolean
   isLoading?: boolean
+  isComingSoon?: boolean
 }
 
 export function SelectionPanel({
@@ -23,21 +24,22 @@ export function SelectionPanel({
   onReserve,
   isConnected,
   isLoading = false,
+  isComingSoon = false,
 }: SelectionPanelProps) {
   if (!selection) {
     return (
-      <Card shadow="blue" className="p-6">
+      <Card variant="glow" className="p-6">
         <CardHeader className="p-0 mb-4">
-          <CardTitle>Select a zone</CardTitle>
+          <CardTitle className="text-white">Select a zone</CardTitle>
         </CardHeader>
         <CardContent className="p-0">
-          <p className="text-sm text-ink/70">
+          <p className="text-sm text-gray-400">
             Click and drag on the canvas to select a rectangular zone.
             Minimum size is 1×1 cell (8×8 pixels).
           </p>
           <div className="mt-4 flex items-center gap-2">
             <Chip>Tier {tier}</Chip>
-            <Chip variant="info">{pricePerPixel} $PIXEL / px</Chip>
+            <Chip variant="secondary">{pricePerPixel} $BLOK / px</Chip>
           </div>
         </CardContent>
       </Card>
@@ -48,70 +50,86 @@ export function SelectionPanel({
   const totalPrice = totalPixels * pricePerPixel
 
   return (
-    <Card shadow="yellow" className="p-6">
+    <Card variant="glow" className="p-6 border-lime">
       <CardHeader className="p-0 mb-4">
-        <CardTitle>Your selection</CardTitle>
+        <CardTitle className="text-lime">Your selection</CardTitle>
       </CardHeader>
       <CardContent className="p-0 space-y-4">
         {/* Zone info */}
         <div className="grid grid-cols-2 gap-4 text-sm">
           <div>
-            <span className="text-ink/60">Position</span>
-            <p className="font-medium">
+            <span className="text-gray-500">Position</span>
+            <p className="font-medium text-white">
               ({selection.x}, {selection.y})
             </p>
           </div>
           <div>
-            <span className="text-ink/60">Size (cells)</span>
-            <p className="font-medium">
+            <span className="text-gray-500">Size (cells)</span>
+            <p className="font-medium text-white">
               {selection.w} × {selection.h}
             </p>
           </div>
           <div>
-            <span className="text-ink/60">Size (pixels)</span>
-            <p className="font-medium">
+            <span className="text-gray-500">Size (pixels)</span>
+            <p className="font-medium text-white">
               {selection.w * 8} × {selection.h * 8}
             </p>
           </div>
           <div>
-            <span className="text-ink/60">Total pixels</span>
-            <p className="font-medium">{formatNumber(totalPixels)}</p>
+            <span className="text-gray-500">Total pixels</span>
+            <p className="font-medium text-white">{formatNumber(totalPixels)}</p>
           </div>
         </div>
 
         {/* Pricing */}
-        <div className="border-t-2 border-ink pt-4">
+        <div className="border-t border-gray-700 pt-4">
           <div className="flex justify-between items-center mb-2">
-            <span className="text-sm text-ink/60">Price per pixel</span>
-            <Chip>{pricePerPixel} $PIXEL</Chip>
+            <span className="text-sm text-gray-500">Price per pixel</span>
+            <Chip>{pricePerPixel} $BLOK</Chip>
           </div>
           <div className="flex justify-between items-center">
-            <span className="font-pixel text-sm">Total</span>
-            <span className="font-display text-2xl text-red">
-              {formatNumber(totalPrice)} $PIXEL
+            <span className="font-mono text-sm text-white">Total</span>
+            <span className="font-display text-2xl text-lime">
+              {formatNumber(totalPrice)} $BLOK
             </span>
           </div>
         </div>
 
         {/* Action */}
         <div className="pt-2">
-          {isConnected ? (
-            <Button
-              size="lg"
-              className="w-full"
-              onClick={onReserve}
-              disabled={isLoading}
-            >
-              {isLoading ? "Reserving..." : "Reserve zone →"}
-            </Button>
+          {isComingSoon ? (
+            <>
+              <Button size="lg" className="w-full" disabled>
+                Coming Soon
+              </Button>
+              <p className="text-xs text-gray-500 text-center mt-2">
+                $BLOK token launching soon
+              </p>
+            </>
+          ) : isConnected ? (
+            <>
+              <Button
+                size="lg"
+                className="w-full"
+                onClick={onReserve}
+                disabled={isLoading}
+              >
+                {isLoading ? "Reserving..." : "Reserve zone →"}
+              </Button>
+              <p className="text-xs text-gray-500 text-center mt-2">
+                Reservation locks the zone for 10 minutes
+              </p>
+            </>
           ) : (
-            <Button size="lg" className="w-full" disabled>
-              Connect wallet to reserve
-            </Button>
+            <>
+              <Button size="lg" className="w-full" disabled>
+                Connect wallet to reserve
+              </Button>
+              <p className="text-xs text-gray-500 text-center mt-2">
+                Reservation locks the zone for 10 minutes
+              </p>
+            </>
           )}
-          <p className="text-xs text-ink/50 text-center mt-2">
-            Reservation locks the zone for 10 minutes
-          </p>
         </div>
       </CardContent>
     </Card>

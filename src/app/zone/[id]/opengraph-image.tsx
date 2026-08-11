@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma"
 // Use nodejs runtime for Prisma compatibility
 export const runtime = "nodejs"
 
-export const alt = "Zone on BLOK"
+export const alt = "Zone on BLOKR"
 export const size = {
   width: 1200,
   height: 630,
@@ -137,7 +137,7 @@ export default async function Image({ params }: { params: Promise<{ id: string }
             padding: 48,
           }}
         >
-          {/* BLOK badge */}
+          {/* BLOKR badge */}
           <div
             style={{
               display: "flex",

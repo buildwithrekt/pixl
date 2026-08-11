@@ -7,9 +7,9 @@ export async function GET() {
       // Return mock data when database isn't configured
       return NextResponse.json({
         zones: [
-          { x: 10, y: 10, w: 5, h: 5, status: "DRAWN" },
-          { x: 20, y: 30, w: 8, h: 4, status: "PAID" },
-          { x: 50, y: 20, w: 3, h: 6, status: "RESERVED" },
+          { id: "mock-1", x: 10, y: 10, w: 5, h: 5, status: "DRAWN", totalPixels: 5 * 5 * 64, projectName: "Demo Zone 1", imageUrl: null },
+          { id: "mock-2", x: 20, y: 30, w: 8, h: 4, status: "PAID", totalPixels: 8 * 4 * 64, projectName: "Demo Zone 2", imageUrl: null },
+          { id: "mock-3", x: 50, y: 20, w: 3, h: 6, status: "RESERVED", totalPixels: 3 * 6 * 64, projectName: null, imageUrl: null },
         ],
       })
     }
@@ -33,6 +33,7 @@ export async function GET() {
         wallet: true,
         projectName: true,
         imageUrl: true,
+        totalPixels: true,
       },
       orderBy: { createdAt: "desc" },
     })

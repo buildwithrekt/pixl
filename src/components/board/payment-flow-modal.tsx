@@ -7,6 +7,7 @@ import { UploadStep } from "./steps/upload-step"
 import { PayStep } from "./steps/pay-step"
 import { SuccessStep } from "./steps/success-step"
 import { usePayment } from "@/hooks/use-payment"
+import { useWalletAuth } from "@/hooks/use-wallet-auth"
 
 type FlowStep = "confirm" | "upload" | "pay" | "success"
 
@@ -60,6 +61,7 @@ export function PaymentFlowModal({
   const [confirmedTxHash, setConfirmedTxHash] = useState<string | null>(null)
 
   const { pay, status: paymentStatus, txHash, error, reset } = usePayment()
+  const { isDemoMode } = useWalletAuth()
 
   // Reset state when modal closes
   const handleClose = useCallback(() => {
@@ -156,6 +158,32 @@ export function PaymentFlowModal({
   const handlePay = useCallback(async () => {
     if (!reservation) return
 
+    // Demo mode: simulate payment
+    if (isDemoMode) {
+      try {
+        const response = await fetch("/api/demo/pay", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            zoneId: reservation.id,
+            reservationId: reservation.reservationId,
+          }),
+        })
+
+        if (!response.ok) {
+          throw new Error("Demo payment failed")
+        }
+
+        setConfirmedTxHash("DEMO_TX_" + Date.now())
+        setStep("success")
+      } catch (error) {
+        console.error("Demo payment error:", error)
+        alert("Demo payment failed")
+      }
+      return
+    }
+
+    // Real payment
     const hash = await pay(reservation.totalPrice, reservation.reservationId)
 
     if (hash) {
@@ -165,7 +193,7 @@ export function PaymentFlowModal({
         setStep("success")
       }, 3000)
     }
-  }, [reservation, pay])
+  }, [reservation, pay, isDemoMode])
 
   if (!selection || !pricing) return null
 

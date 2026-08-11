@@ -6,7 +6,7 @@ interface PixelTextProps {
   className?: string
 }
 
-const COLORS = ["text-red", "text-blue", "text-orange", "text-ink"]
+const COLORS = ["text-lime", "text-white", "text-lime", "text-white"]
 
 export function PixelText({ text, className }: PixelTextProps) {
   return (

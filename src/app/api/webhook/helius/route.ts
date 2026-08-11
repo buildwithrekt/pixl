@@ -162,7 +162,7 @@ export async function POST(request: NextRequest) {
       }
 
       // Update zone status to PAID
-      await prisma.$transaction(async (txPrisma: typeof prisma) => {
+      await prisma.$transaction(async (txPrisma) => {
         await txPrisma.zone.update({
           where: { id: zone.id },
           data: {

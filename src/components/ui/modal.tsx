@@ -34,7 +34,7 @@ export function Modal({ isOpen, onClose, children, className }: ModalProps) {
     <div className="fixed inset-0 z-50">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-ink/60 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
         onClick={onClose}
       />
 
@@ -42,7 +42,8 @@ export function Modal({ isOpen, onClose, children, className }: ModalProps) {
       <div className="absolute inset-0 flex items-center justify-center p-4">
         <div
           className={cn(
-            "relative bg-white border-[2.5px] border-ink rounded-[14px] shadow-hard-lg",
+            "relative bg-gray-900 border border-lime rounded-[6px]",
+            "shadow-[0_0_40px_rgba(204,253,3,0.15)]",
             "w-full max-w-lg max-h-[90vh] overflow-auto",
             className
           )}
@@ -63,7 +64,7 @@ export function ModalHeader({
   className?: string
 }) {
   return (
-    <div className={cn("px-6 pt-6 pb-4 border-b border-grid-line", className)}>
+    <div className={cn("px-6 pt-6 pb-4 border-b border-gray-700", className)}>
       {children}
     </div>
   )
@@ -89,7 +90,7 @@ export function ModalFooter({
   return (
     <div
       className={cn(
-        "px-6 pb-6 pt-4 border-t border-grid-line flex items-center justify-end gap-3",
+        "px-6 pb-6 pt-4 border-t border-gray-700 flex items-center justify-end gap-3",
         className
       )}
     >

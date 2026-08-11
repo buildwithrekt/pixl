@@ -1,0 +1,19 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#FAF5EA"/>
+  <!-- Pixel P letter -->
+  <rect x="6" y="4" width="4" height="4" fill="#E8402A"/>
+  <rect x="10" y="4" width="4" height="4" fill="#E8402A"/>
+  <rect x="14" y="4" width="4" height="4" fill="#E8402A"/>
+  <rect x="18" y="4" width="4" height="4" fill="#E8402A"/>
+  <rect x="6" y="8" width="4" height="4" fill="#E8402A"/>
+  <rect x="22" y="8" width="4" height="4" fill="#E8402A"/>
+  <rect x="6" y="12" width="4" height="4" fill="#E8402A"/>
+  <rect x="22" y="12" width="4" height="4" fill="#E8402A"/>
+  <rect x="6" y="16" width="4" height="4" fill="#E8402A"/>
+  <rect x="10" y="16" width="4" height="4" fill="#E8402A"/>
+  <rect x="14" y="16" width="4" height="4" fill="#E8402A"/>
+  <rect x="18" y="16" width="4" height="4" fill="#E8402A"/>
+  <rect x="6" y="20" width="4" height="4" fill="#E8402A"/>
+  <rect x="6" y="24" width="4" height="4" fill="#E8402A"/>
+</svg>

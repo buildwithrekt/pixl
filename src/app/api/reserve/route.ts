@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Transaction: check overlap, get price, create reservation
-    const result = await prisma.$transaction(async (tx: typeof prisma) => {
+    const result = await prisma.$transaction(async (tx) => {
       // Check for overlapping zones (not expired)
       const overlapping = await tx.zone.findFirst({
         where: {

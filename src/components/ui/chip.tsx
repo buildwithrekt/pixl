@@ -5,23 +5,30 @@ import { cn } from "@/lib/utils"
 const chipVariants = cva(
   [
     "inline-flex items-center justify-center",
-    "font-pixel text-[10px] uppercase tracking-wider",
-    "border-2 border-ink rounded-[8px]",
-    "shadow-hard-sm",
-    "px-3 py-1.5",
+    "font-mono text-[10px] uppercase tracking-wider",
+    "border rounded-[4px]",
+    "px-2.5 py-1",
+    "transition-colors duration-150",
   ].join(" "),
   {
     variants: {
       variant: {
-        default: "bg-white text-ink border-yellow",
-        secondary: "bg-white text-ink",
-        info: "bg-white text-blue border-blue",
-        muted: "bg-grid-line text-ink border-grid-line shadow-none",
-        highlight: "bg-yellow text-ink",
+        default: "bg-transparent text-lime border-lime",
+        secondary: "bg-gray-800 text-gray-300 border-gray-700",
+        muted: "bg-gray-900 text-gray-500 border-gray-800",
+        highlight: "bg-lime text-black border-lime",
+        info: "bg-transparent text-gray-400 border-gray-600",
+        success: "bg-lime/10 text-lime border-lime/50",
+      },
+      size: {
+        default: "text-[10px] px-2.5 py-1",
+        sm: "text-[9px] px-2 py-0.5",
+        lg: "text-[11px] px-3 py-1.5",
       },
     },
     defaultVariants: {
       variant: "default",
+      size: "default",
     },
   }
 )
@@ -31,10 +38,10 @@ export interface ChipProps
     VariantProps<typeof chipVariants> {}
 
 const Chip = React.forwardRef<HTMLSpanElement, ChipProps>(
-  ({ className, variant, ...props }, ref) => (
+  ({ className, variant, size, ...props }, ref) => (
     <span
       ref={ref}
-      className={cn(chipVariants({ variant, className }))}
+      className={cn(chipVariants({ variant, size, className }))}
       {...props}
     />
   )

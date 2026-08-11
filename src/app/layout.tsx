@@ -22,36 +22,36 @@ const silkscreen = Silkscreen({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://blok.art"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://blokr.art"),
   title: {
-    default: "BLOK - Collaborative Pixel Canvas",
-    template: "%s | BLOK",
+    default: "BLOKR - Collaborative Pixel Canvas",
+    template: "%s | BLOKR",
   },
   description: "One million pixels. Bought by degens, claimed by memecoins, paid for in tokens that get burned every 24 hours.",
   keywords: ["pixel art", "crypto", "memecoin", "nft", "robinhood chain", "pixel board", "collaborative canvas", "blok"],
-  authors: [{ name: "BLOK" }],
-  creator: "BLOK",
+  authors: [{ name: "BLOKR" }],
+  creator: "BLOKR",
   manifest: "/manifest.json",
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "BLOK",
-    title: "BLOK - Collaborative Pixel Canvas",
+    siteName: "BLOKR",
+    title: "BLOKR - Collaborative Pixel Canvas",
     description: "One million pixels. Bought by degens, claimed by memecoins, paid for in tokens that get burned.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "BLOK - One million pixels",
+        alt: "BLOKR - One million pixels",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BLOK - Collaborative Pixel Canvas",
+    title: "BLOKR - Collaborative Pixel Canvas",
     description: "One million pixels. Bought by degens, claimed by memecoins.",
-    creator: "@BLOK",
+    creator: "@BLOKR",
     images: ["/og-image.png"],
   },
   robots: {
@@ -64,9 +64,9 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  name: "BLOK",
+  name: "BLOKR",
   description: "Collaborative pixel canvas on Robinhood Chain. One million pixels. Bought by degens, claimed by memecoins.",
-  url: "https://blok.art",
+  url: "https://blokr.art",
   applicationCategory: "GameApplication",
   operatingSystem: "Web",
   offers: {
@@ -94,11 +94,11 @@ export default function RootLayout({
         {/* Plausible Analytics - privacy-first, no cookies */}
         <script
           defer
-          data-domain="blok.art"
+          data-domain="blokr.art"
           src="https://plausible.io/js/script.js"
         />
       </head>
-      <body className="min-h-screen bg-paper text-ink font-body antialiased">
+      <body className="min-h-screen bg-black text-white font-body antialiased">
         <WalletProvider>{children}</WalletProvider>
       </body>
     </html>

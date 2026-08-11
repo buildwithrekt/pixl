@@ -33,11 +33,11 @@ export function ConfirmStep({
   return (
     <div className="space-y-6">
       {/* Zone preview */}
-      <Card shadow="blue" className="p-4">
+      <div className="bg-gray-800 border border-gray-700 rounded-[4px] p-4">
         <div className="flex items-start gap-4">
           {/* Mini preview */}
           <div
-            className="border-2 border-ink rounded bg-yellow/30 flex-shrink-0"
+            className="border border-lime/50 rounded bg-lime/20 flex-shrink-0"
             style={{
               width: Math.min(selection.w * 4, 80),
               height: Math.min(selection.h * 4, 80),
@@ -47,73 +47,73 @@ export function ConfirmStep({
           {/* Zone info */}
           <div className="flex-1 space-y-2">
             <div className="flex items-center gap-2">
-              <span className="font-pixel text-[10px] text-ink/60 uppercase">
+              <span className="font-mono text-[10px] text-gray-500 uppercase">
                 Position
               </span>
-              <span className="font-body text-sm">
+              <span className="text-sm text-white">
                 ({selection.x}, {selection.y})
               </span>
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="font-pixel text-[10px] text-ink/60 uppercase">
+              <span className="font-mono text-[10px] text-gray-500 uppercase">
                 Size
               </span>
-              <span className="font-body text-sm">
+              <span className="text-sm text-white">
                 {selection.w}×{selection.h} cells ({pixelWidth}×{pixelHeight} px)
               </span>
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="font-pixel text-[10px] text-ink/60 uppercase">
+              <span className="font-mono text-[10px] text-gray-500 uppercase">
                 Pixels
               </span>
-              <span className="font-body text-sm font-medium">
+              <span className="text-sm font-medium text-white">
                 {pricing.totalPixels.toLocaleString()}
               </span>
             </div>
           </div>
         </div>
-      </Card>
+      </div>
 
       {/* Pricing breakdown */}
-      <Card shadow="yellow" className="p-4">
+      <div className="bg-gray-800 border border-gray-700 rounded-[4px] p-4">
         <CardHeader className="p-0 mb-4">
-          <CardTitle className="text-sm">Pricing</CardTitle>
+          <CardTitle className="text-sm text-white">Pricing</CardTitle>
         </CardHeader>
         <CardContent className="p-0 space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-sm text-ink/70">Current tier</span>
-            <Chip variant="info">TIER {pricing.tier}</Chip>
+            <span className="text-sm text-gray-400">Current tier</span>
+            <Chip variant="secondary">TIER {pricing.tier}</Chip>
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-sm text-ink/70">Price per pixel</span>
-            <span className="font-body text-sm">
-              {pricing.pricePerPixel} $PIXEL
+            <span className="text-sm text-gray-400">Price per pixel</span>
+            <span className="text-sm text-white">
+              {pricing.pricePerPixel} $BLOK
             </span>
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-sm text-ink/70">Total pixels</span>
-            <span className="font-body text-sm">
+            <span className="text-sm text-gray-400">Total pixels</span>
+            <span className="text-sm text-white">
               {pricing.totalPixels.toLocaleString()}
             </span>
           </div>
 
-          <div className="h-px bg-grid-line" />
+          <div className="h-px bg-gray-700" />
 
           <div className="flex items-center justify-between">
-            <span className="font-display font-bold">Total</span>
-            <Chip>{pricing.totalPrice.toLocaleString()} $PIXEL</Chip>
+            <span className="font-display font-bold text-white">Total</span>
+            <Chip>{pricing.totalPrice.toLocaleString()} $BLOK</Chip>
           </div>
         </CardContent>
-      </Card>
+      </div>
 
       {/* Reserve notice */}
-      <p className="text-sm text-ink/60 text-center">
+      <p className="text-sm text-gray-500 text-center">
         Reserving will lock this zone for{" "}
-        <span className="font-pixel text-ink">10 minutes</span> at the current
+        <span className="font-mono text-lime">10 minutes</span> at the current
         price.
       </p>
 

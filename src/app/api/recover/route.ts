@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
     if (txResult.to?.toLowerCase() !== treasuryAddress) {
       return NextResponse.json({
         success: false,
-        message: "This transaction was not sent to the PIXELBOARD treasury.",
+        message: "This transaction was not sent to the BLOKR treasury.",
         data: {
           txHash: normalizedHash,
           from: txResult.from || "unknown",

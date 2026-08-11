@@ -22,16 +22,16 @@ export function StatsTicker({
         PIXELS SOLD: {formatNumber(pixelsSold)} / {formatNumber(totalPixels)}
       </span>
       <span className="mx-8">•</span>
-      <span className="mx-8">$PIXEL BURNED: {formatNumber(pixelsBurned)}</span>
+      <span className="mx-8">$BLOK BURNED: {formatNumber(pixelsBurned)}</span>
       <span className="mx-8">•</span>
-      <span className="mx-8">CURRENT PRICE: {currentPrice} $PIXEL / PX</span>
+      <span className="mx-8">CURRENT PRICE: {currentPrice} $BLOK / PX</span>
       <span className="mx-8">•</span>
     </>
   )
 
   return (
-    <div className="bg-yellow border-y-2 border-ink overflow-hidden py-3">
-      <div className="animate-marquee whitespace-nowrap font-pixel text-[11px] text-ink uppercase tracking-wider">
+    <div className="bg-lime overflow-hidden py-3">
+      <div className="animate-marquee whitespace-nowrap font-mono text-[11px] text-black uppercase tracking-wider">
         {/* Duplicate content for seamless loop */}
         {content}
         {content}

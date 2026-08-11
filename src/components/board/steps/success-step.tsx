@@ -28,21 +28,21 @@ export function SuccessStep({ zoneId, txHash, onClose }: SuccessStepProps) {
 
       {/* Success message */}
       <div>
-        <h3 className="font-display text-2xl font-bold text-ink">
+        <h3 className="font-display text-2xl font-bold text-lime">
           Pixels claimed!
         </h3>
-        <p className="text-ink/70 mt-2">
-          Your zone is now part of the PIXELBOARD forever.
+        <p className="text-gray-400 mt-2">
+          Your zone is now part of the BLOKR forever.
         </p>
       </div>
 
       {/* Zone info */}
-      <Card shadow="yellow" className="p-4 inline-block">
-        <span className="font-pixel text-[10px] text-ink/60 uppercase">
+      <div className="bg-gray-800 border border-gray-700 rounded-[4px] p-4 inline-block">
+        <span className="font-mono text-[10px] text-gray-500 uppercase">
           Zone ID
         </span>
-        <p className="font-mono text-sm mt-1">{zoneId}</p>
-      </Card>
+        <p className="font-mono text-sm mt-1 text-white">{zoneId}</p>
+      </div>
 
       {/* Transaction link */}
       <div>
@@ -50,9 +50,9 @@ export function SuccessStep({ zoneId, txHash, onClose }: SuccessStepProps) {
           href={explorerUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-blue hover:underline"
+          className="inline-flex items-center gap-2 text-lime hover:underline"
         >
-          <Chip variant="info">View transaction</Chip>
+          <Chip variant="secondary">View transaction</Chip>
         </a>
       </div>
 
@@ -68,9 +68,9 @@ export function SuccessStep({ zoneId, txHash, onClose }: SuccessStepProps) {
       </div>
 
       {/* Share prompt */}
-      <p className="text-sm text-ink/50 pt-4">
+      <p className="text-sm text-gray-500 pt-4">
         Share your zone on X and tag{" "}
-        <span className="font-pixel text-blue">@PIXELBOARD</span>
+        <span className="font-mono text-lime">@BLOKR</span>
       </p>
     </div>
   )

@@ -45,10 +45,10 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 403 })
     }
 
-    // Verify zone status (must be PAID to upload)
-    if (zone.status !== "PAID") {
+    // Verify zone status (must be RESERVED, PAID, or DRAWN to upload/update)
+    if (zone.status !== "RESERVED" && zone.status !== "PAID" && zone.status !== "DRAWN") {
       return NextResponse.json(
-        { error: `Zone is ${zone.status}, must be PAID to upload` },
+        { error: `Zone is ${zone.status}, cannot upload` },
         { status: 400 }
       )
     }
@@ -68,24 +68,37 @@ export async function POST(request: NextRequest) {
     const expectedWidth = zone.w * 8
     const expectedHeight = zone.h * 8
 
-    // Resize image to exact zone dimensions
+    // Resize image to exact zone dimensions (for canvas composite)
     const resizedBuffer = await sharp(buffer)
       .resize(expectedWidth, expectedHeight, { fit: "cover" })
       .png()
       .toBuffer()
 
-    // Upload to Vercel Blob
-    const blob = await put(`zones/${zoneId}.png`, resizedBuffer, {
-      access: "public",
-      contentType: "image/png",
-    })
+    // Optimize original image (keep full resolution but compress)
+    const originalBuffer = await sharp(buffer)
+      .png({ quality: 90 })
+      .toBuffer()
 
-    // Update zone with image URL and set status to DRAWN
+    // Upload both images to Vercel Blob in parallel
+    const [resizedBlob, originalBlob] = await Promise.all([
+      put(`zones/${zoneId}.png`, resizedBuffer, {
+        access: "public",
+        contentType: "image/png",
+      }),
+      put(`zones/${zoneId}-original.png`, originalBuffer, {
+        access: "public",
+        contentType: "image/png",
+      }),
+    ])
+
+    // Update zone with both image URLs
+    // Set status to DRAWN if PAID, keep DRAWN if already DRAWN
     await prisma.zone.update({
       where: { id: zoneId },
       data: {
-        imageUrl: blob.url,
-        status: "DRAWN",
+        imageUrl: resizedBlob.url,
+        originalImageUrl: originalBlob.url,
+        ...(zone.status === "PAID" || zone.status === "DRAWN" ? { status: "DRAWN" } : {}),
       },
     })
 
@@ -96,7 +109,11 @@ export async function POST(request: NextRequest) {
         zoneId,
         wallet,
         data: {
-          imageUrl: blob.url,
+          imageUrl: resizedBlob.url,
+          originalImageUrl: originalBlob.url,
+          isUpdate: !!zone.imageUrl,
+          previousImageUrl: zone.imageUrl || null,
+          previousOriginalImageUrl: zone.originalImageUrl || null,
           originalSize: `${metadata.width}x${metadata.height}`,
           finalSize: `${expectedWidth}x${expectedHeight}`,
         },
@@ -105,7 +122,8 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      url: blob.url,
+      url: resizedBlob.url,
+      originalUrl: originalBlob.url,
     })
   } catch (error) {
     console.error("Upload error:", error)

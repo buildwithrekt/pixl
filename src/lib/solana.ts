@@ -22,7 +22,7 @@ export function getConnection(): Connection {
   return new Connection(rpcUrl, "confirmed")
 }
 
-// Get $PIXEL token mint
+// Get $BLOK token mint
 export function getPixelTokenMint(): PublicKey {
   const mint = process.env.NEXT_PUBLIC_PIXEL_TOKEN_MINT
   if (!mint) throw new Error("PIXEL_TOKEN_MINT not configured")
