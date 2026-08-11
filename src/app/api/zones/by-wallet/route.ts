@@ -40,7 +40,7 @@ export async function GET(request: NextRequest) {
     })
 
     // Serialize BigInt values
-    const serializedZones = zones.map((zone) => ({
+    const serializedZones = zones.map((zone: typeof zones[number]) => ({
       id: zone.id,
       x: zone.x,
       y: zone.y,

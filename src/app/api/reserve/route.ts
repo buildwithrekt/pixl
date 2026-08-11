@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { prisma } from "@/lib/prisma"
+import { prisma, PrismaTransactionClient } from "@/lib/prisma"
 import { calculatePrice, zoneSizeInPixels } from "@/lib/pricing"
 import { v4 as uuidv4 } from "uuid"
 
@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Transaction: check overlap, get price, create reservation
-    const result = await prisma.$transaction(async (tx) => {
+    const result = await prisma.$transaction(async (tx: PrismaTransactionClient) => {
       // Check for overlapping zones (not expired)
       const overlapping = await tx.zone.findFirst({
         where: {

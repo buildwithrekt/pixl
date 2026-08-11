@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { prisma } from "@/lib/prisma"
+import { prisma, PrismaTransactionClient } from "@/lib/prisma"
 import {
   calculateFloorPrice,
   getListingExpiresAt,
@@ -87,7 +87,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create listing in transaction
-    const result = await prisma.$transaction(async (tx) => {
+    const result = await prisma.$transaction(async (tx: PrismaTransactionClient) => {
       // Create listing
       const listing = await tx.listing.create({
         data: {
@@ -182,7 +182,7 @@ export async function DELETE(request: NextRequest) {
     }
 
     // Cancel listing in transaction
-    await prisma.$transaction(async (tx) => {
+    await prisma.$transaction(async (tx: PrismaTransactionClient) => {
       // Update listing status
       await tx.listing.update({
         where: { id: listingId },

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { prisma } from "@/lib/prisma"
+import { prisma, PrismaTransactionClient } from "@/lib/prisma"
 
 const DEMO_MODE = process.env.NEXT_PUBLIC_DEMO_MODE === "true"
 
@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
     // Update zone status to PAID (or DRAWN if image was uploaded)
     const newStatus = zone.imageUrl ? "DRAWN" : "PAID"
 
-    await prisma.$transaction(async (tx) => {
+    await prisma.$transaction(async (tx: PrismaTransactionClient) => {
       // Update zone
       await tx.zone.update({
         where: { id: zoneId },

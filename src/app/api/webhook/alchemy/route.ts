@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { prisma } from "@/lib/prisma"
+import { prisma, PrismaTransactionClient } from "@/lib/prisma"
 import { verifyTransaction, getTreasuryAddress, getPixelTokenAddress } from "@/lib/evm"
 import crypto from "crypto"
 
@@ -159,7 +159,7 @@ export async function POST(request: NextRequest) {
       // Update zone status to PAID (or DRAWN if image already uploaded)
       const newStatus = zone.imageUrl ? "DRAWN" : "PAID"
 
-      await prisma.$transaction(async (tx) => {
+      await prisma.$transaction(async (tx: PrismaTransactionClient) => {
         await tx.zone.update({
           where: { id: zone.id },
           data: {

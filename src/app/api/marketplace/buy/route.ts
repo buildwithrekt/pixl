@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { prisma } from "@/lib/prisma"
+import { prisma, PrismaTransactionClient } from "@/lib/prisma"
 import { calculateFees, isListingExpired } from "@/lib/marketplace"
 import { getTierForPixelsSold } from "@/lib/pricing"
 
@@ -112,7 +112,7 @@ async function completePurchase(
     : 1
 
   // Atomic transaction
-  const result = await prisma.$transaction(async (tx) => {
+  const result = await prisma.$transaction(async (tx: PrismaTransactionClient) => {
     // Update zone ownership
     await tx.zone.update({
       where: { id: listing.zoneId },

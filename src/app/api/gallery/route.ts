@@ -34,7 +34,7 @@ export async function GET() {
     })
 
     // Convert BigInt to string for JSON serialization
-    const serializedZones = zones.map((zone) => ({
+    const serializedZones = zones.map((zone: typeof zones[number]) => ({
       ...zone,
       totalPrice: zone.totalPrice.toString(),
       paidAt: zone.paidAt?.toISOString() || null,

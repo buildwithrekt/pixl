@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { prisma } from "@/lib/prisma"
+import { prisma, PrismaTransactionClient } from "@/lib/prisma"
 import crypto from "crypto"
 
 // Helius webhook payload types
@@ -162,7 +162,7 @@ export async function POST(request: NextRequest) {
       }
 
       // Update zone status to PAID
-      await prisma.$transaction(async (txPrisma) => {
+      await prisma.$transaction(async (txPrisma: PrismaTransactionClient) => {
         await txPrisma.zone.update({
           where: { id: zone.id },
           data: {

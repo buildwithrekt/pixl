@@ -1,6 +1,9 @@
 import { PrismaPg } from "@prisma/adapter-pg"
-import { PrismaClient } from "@prisma/client"
+import { PrismaClient, Prisma } from "@prisma/client"
 import { Pool } from "pg"
+
+// Export transaction type for use in route handlers
+export type PrismaTransactionClient = Prisma.TransactionClient
 
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined
