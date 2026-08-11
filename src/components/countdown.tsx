@@ -112,9 +112,32 @@ export function Countdown({ targetDate, onComplete }: CountdownProps) {
 }
 
 export function CountdownBanner() {
-  const launchDate = process.env.NEXT_PUBLIC_LAUNCH_DATE
-    ? new Date(process.env.NEXT_PUBLIC_LAUNCH_DATE)
-    : new Date(Date.now() + 24 * 60 * 60 * 1000) // Default: 24h from now
+  const launchDateStr = process.env.NEXT_PUBLIC_LAUNCH_DATE
+
+  // Si pas de date configurée, afficher juste "Coming Soon"
+  if (!launchDateStr) {
+    return (
+      <div className="bg-black border-b border-lime/30">
+        <div className="max-w-4xl mx-auto px-4 py-8 md:py-12 text-center">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Sprite map={SPRITE_MAPS.fire} pixelSize={4} />
+            <span className="font-mono text-[11px] text-lime uppercase tracking-wider">
+              $BLOK Token Launch
+            </span>
+            <Sprite map={SPRITE_MAPS.fire} pixelSize={4} />
+          </div>
+          <h2 className="font-display text-2xl md:text-3xl text-white mb-6">
+            Coming Soon
+          </h2>
+          <p className="text-gray-500 text-sm mt-6 max-w-md mx-auto">
+            Get your $BLOK tokens ready. Pixel purchases will open soon.
+          </p>
+        </div>
+      </div>
+    )
+  }
+
+  const launchDate = new Date(launchDateStr)
 
   return (
     <div className="bg-black border-b border-lime/30">
