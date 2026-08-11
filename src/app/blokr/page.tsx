@@ -60,7 +60,7 @@ export default function BlokPage() {
           </Button>
           <Button variant="secondary" asChild>
             <a
-              href="https://pump.fun"
+              href={process.env.NEXT_PUBLIC_BLOK_BUY_URL || "https://pump.fun"}
               target="_blank"
               rel="noopener noreferrer"
             >
