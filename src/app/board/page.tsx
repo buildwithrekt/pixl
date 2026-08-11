@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 import { useWalletAuth } from "@/hooks/use-wallet-auth"
 import { Nav } from "@/components/nav"
+import { CountdownBanner } from "@/components/countdown"
 import { BoardCanvas, BoardCanvasHandle } from "@/components/board/board-canvas"
 import { BoardToolbar } from "@/components/board/board-toolbar"
 import { SelectionPanel } from "@/components/board/selection-panel"
@@ -183,14 +184,8 @@ export default function BoardPage() {
     <main className="min-h-screen flex flex-col bg-black">
       <Nav />
 
-      {/* Coming soon banner */}
-      {isComingSoon && (
-        <div className="bg-lime py-2 px-4 text-center">
-          <span className="font-mono text-[11px] text-black uppercase tracking-wider">
-            Coming Soon - $BLOK token launching soon
-          </span>
-        </div>
-      )}
+      {/* Coming soon countdown */}
+      {isComingSoon && <CountdownBanner />}
 
       {/* Demo mode banner */}
       {isDemoMode && !isComingSoon && (
