@@ -53,7 +53,7 @@ export default async function Image({ params }: { params: Promise<{ id: string }
           height: "100%",
           width: "100%",
           display: "flex",
-          backgroundColor: "#FAF5EA",
+          backgroundColor: "#000000",
           position: "relative",
         }}
       >
@@ -65,7 +65,7 @@ export default async function Image({ params }: { params: Promise<{ id: string }
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "#E9E1CF",
+            backgroundColor: "#111111",
             position: "relative",
           }}
         >
@@ -95,7 +95,7 @@ export default async function Image({ params }: { params: Promise<{ id: string }
                   flexWrap: "wrap",
                   width: 200,
                   height: 200,
-                  border: "3px solid #17150F",
+                  border: "2px solid #ccfd03",
                   borderRadius: 8,
                 }}
               >
@@ -105,7 +105,7 @@ export default async function Image({ params }: { params: Promise<{ id: string }
                     style={{
                       width: 25,
                       height: 25,
-                      backgroundColor: i % 2 === 0 ? "#FAF5EA" : "#E9E1CF",
+                      backgroundColor: i % 2 === 0 ? "#1a1a1a" : "#222222",
                     }}
                   />
                 ))}
@@ -114,8 +114,7 @@ export default async function Image({ params }: { params: Promise<{ id: string }
                 style={{
                   marginTop: 16,
                   fontSize: 14,
-                  color: "#17150F",
-                  opacity: 0.5,
+                  color: "#666666",
                   textTransform: "uppercase",
                   letterSpacing: "0.1em",
                 }}
@@ -141,16 +140,14 @@ export default async function Image({ params }: { params: Promise<{ id: string }
           <div
             style={{
               display: "flex",
-              fontSize: 24,
+              fontSize: 28,
               fontWeight: 800,
               letterSpacing: "0.05em",
               marginBottom: 24,
+              color: "#ccfd03",
             }}
           >
-            <span style={{ display: "flex", color: "#E8402A" }}>B</span>
-            <span style={{ display: "flex", color: "#2A5BFF" }}>L</span>
-            <span style={{ display: "flex", color: "#FF8A00" }}>O</span>
-            <span style={{ display: "flex", color: "#17150F" }}>K</span>
+            BLOKR
           </div>
 
           {/* Zone name */}
@@ -158,7 +155,7 @@ export default async function Image({ params }: { params: Promise<{ id: string }
             style={{
               fontSize: 42,
               fontWeight: 800,
-              color: "#17150F",
+              color: "#ffffff",
               lineHeight: 1.1,
               marginBottom: 24,
             }}
@@ -185,13 +182,12 @@ export default async function Image({ params }: { params: Promise<{ id: string }
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  backgroundColor: "#FFC800",
+                  backgroundColor: "#ccfd03",
                   padding: "8px 16px",
                   borderRadius: 8,
-                  border: "2px solid #17150F",
                 }}
               >
-                <span style={{ fontSize: 16, fontWeight: 600, color: "#17150F" }}>
+                <span style={{ fontSize: 16, fontWeight: 600, color: "#000000" }}>
                   {pixels.toLocaleString()} pixels
                 </span>
               </div>
@@ -199,18 +195,18 @@ export default async function Image({ params }: { params: Promise<{ id: string }
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  backgroundColor:
-                    zone?.status === "DRAWN"
-                      ? "#E8402A"
-                      : zone?.status === "PAID"
-                      ? "#FF8A00"
-                      : "#FFC800",
+                  backgroundColor: zone?.status === "DRAWN" ? "#ccfd03" : "#333333",
                   padding: "8px 16px",
                   borderRadius: 8,
-                  border: "2px solid #17150F",
                 }}
               >
-                <span style={{ fontSize: 16, fontWeight: 600, color: "#17150F" }}>
+                <span
+                  style={{
+                    fontSize: 16,
+                    fontWeight: 600,
+                    color: zone?.status === "DRAWN" ? "#000000" : "#ccfd03",
+                  }}
+                >
                   {zone?.status || "RESERVED"}
                 </span>
               </div>
@@ -220,8 +216,7 @@ export default async function Image({ params }: { params: Promise<{ id: string }
               style={{
                 display: "flex",
                 fontSize: 18,
-                color: "#17150F",
-                opacity: 0.7,
+                color: "#888888",
               }}
             >
               <span style={{ display: "flex" }}>Position: {position}</span>
@@ -237,9 +232,9 @@ export default async function Image({ params }: { params: Promise<{ id: string }
             position: "absolute",
             top: 24,
             right: 24,
-            width: 24,
-            height: 24,
-            backgroundColor: "#E8402A",
+            width: 20,
+            height: 20,
+            backgroundColor: "#ccfd03",
           }}
         />
         <div
@@ -247,11 +242,47 @@ export default async function Image({ params }: { params: Promise<{ id: string }
             position: "absolute",
             bottom: 24,
             right: 24,
-            width: 24,
-            height: 24,
-            backgroundColor: "#2A5BFF",
+            width: 20,
+            height: 20,
+            backgroundColor: "#ccfd03",
           }}
         />
+        <div
+          style={{
+            position: "absolute",
+            top: 24,
+            left: 24,
+            width: 20,
+            height: 20,
+            backgroundColor: "#ccfd03",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            bottom: 24,
+            left: 24,
+            width: 20,
+            height: 20,
+            backgroundColor: "#ccfd03",
+          }}
+        />
+
+        {/* URL */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 24,
+            left: "50%",
+            transform: "translateX(-50%)",
+            display: "flex",
+            fontSize: 16,
+            color: "#555555",
+            letterSpacing: "0.05em",
+          }}
+        >
+          blokr.store
+        </div>
       </div>
     ),
     {

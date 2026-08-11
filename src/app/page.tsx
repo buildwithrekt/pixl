@@ -7,6 +7,7 @@ export const metadata: Metadata = {
 }
 import { Hero } from "@/components/hero"
 import { HowItWorks } from "@/components/how-it-works"
+import { Flywheel } from "@/components/flywheel"
 import { StatsTicker } from "@/components/stats-ticker"
 import { LiveStats } from "@/components/live-stats"
 import { FeaturedZones } from "@/components/featured-zones"
@@ -20,6 +21,7 @@ export default function Home() {
       <div className="flex-1">
         <Hero />
         <StatsTicker />
+        <Flywheel />
         <LiveStats />
         <FeaturedZones />
         <HowItWorks />

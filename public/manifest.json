@@ -1,11 +1,11 @@
 {
-  "name": "BLOK",
-  "short_name": "BLOK",
+  "name": "BLOKR",
+  "short_name": "BLOKR",
   "description": "Collaborative pixel canvas on Robinhood Chain. One million pixels. Bought by degens, claimed by memecoins.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#FAF5EA",
-  "theme_color": "#E8402A",
+  "background_color": "#000000",
+  "theme_color": "#ccfd03",
   "icons": [
     {
       "src": "/icon.svg",

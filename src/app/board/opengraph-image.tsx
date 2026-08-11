@@ -6,14 +6,11 @@ export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
 export default async function OGImage() {
-  // Fetch the composite image URL
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
-
   return new ImageResponse(
     (
       <div
         style={{
-          background: "#FAF5EA",
+          background: "#000000",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -21,32 +18,48 @@ export default async function OGImage() {
           alignItems: "center",
           justifyContent: "center",
           fontFamily: "system-ui, sans-serif",
+          position: "relative",
         }}
       >
+        {/* Glow effect */}
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 500,
+            height: 500,
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(204, 253, 3, 0.1) 0%, transparent 70%)",
+          }}
+        />
+
         {/* Header */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "12px",
-            marginBottom: "24px",
+            gap: "16px",
+            marginBottom: "32px",
+            zIndex: 1,
           }}
         >
           <div
             style={{
-              fontSize: "72px",
+              fontSize: "64px",
               fontWeight: 800,
-              color: "#17150F",
+              color: "#ccfd03",
               letterSpacing: "-2px",
             }}
           >
-            PIXEL
+            BLOKR
           </div>
           <div
             style={{
-              fontSize: "72px",
+              fontSize: "64px",
               fontWeight: 800,
-              color: "#E8402A",
+              color: "#ffffff",
               letterSpacing: "-2px",
             }}
           >
@@ -57,15 +70,15 @@ export default async function OGImage() {
         {/* Canvas preview placeholder */}
         <div
           style={{
-            width: "400px",
-            height: "400px",
-            background: "#fff",
-            border: "4px solid #17150F",
-            borderRadius: "16px",
+            width: "320px",
+            height: "320px",
+            background: "#111111",
+            border: "2px solid #ccfd03",
+            borderRadius: "12px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            boxShadow: "8px 8px 0 #17150F",
+            zIndex: 1,
           }}
         >
           <div
@@ -80,23 +93,21 @@ export default async function OGImage() {
             <div
               style={{
                 display: "flex",
-                gap: "4px",
+                gap: "3px",
               }}
             >
               {[...Array(8)].map((_, row) => (
-                <div key={row} style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                <div key={row} style={{ display: "flex", flexDirection: "column", gap: "3px" }}>
                   {[...Array(8)].map((_, col) => {
-                    const colors = ["#E8402A", "#2A5BFF", "#FFC800", "#FF8A00", "#FAF5EA"]
-                    const color = colors[Math.floor((row + col) * 7.3) % colors.length]
+                    const isLime = (row + col) % 3 === 0
                     return (
                       <div
                         key={col}
                         style={{
-                          width: "32px",
-                          height: "32px",
-                          background: color,
-                          borderRadius: "4px",
-                          border: "2px solid #17150F",
+                          width: "28px",
+                          height: "28px",
+                          background: isLime ? "#ccfd03" : "#222222",
+                          borderRadius: "3px",
                         }}
                       />
                     )
@@ -110,13 +121,32 @@ export default async function OGImage() {
         {/* Tagline */}
         <div
           style={{
-            marginTop: "24px",
+            marginTop: "32px",
             fontSize: "24px",
-            color: "#17150F",
-            opacity: 0.6,
+            color: "#666666",
+            zIndex: 1,
           }}
         >
           One million pixels. Bought by degens.
+        </div>
+
+        {/* Decorative corners */}
+        <div style={{ position: "absolute", top: 24, left: 24, width: 16, height: 16, backgroundColor: "#ccfd03" }} />
+        <div style={{ position: "absolute", top: 24, right: 24, width: 16, height: 16, backgroundColor: "#ccfd03" }} />
+        <div style={{ position: "absolute", bottom: 24, left: 24, width: 16, height: 16, backgroundColor: "#ccfd03" }} />
+        <div style={{ position: "absolute", bottom: 24, right: 24, width: 16, height: 16, backgroundColor: "#ccfd03" }} />
+
+        {/* URL */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 24,
+            fontSize: 18,
+            color: "#444444",
+            letterSpacing: "0.05em",
+          }}
+        >
+          blokr.store/board
         </div>
       </div>
     ),

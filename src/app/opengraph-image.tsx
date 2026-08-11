@@ -20,7 +20,7 @@ export default async function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#FAF5EA",
+          backgroundColor: "#000000",
           position: "relative",
         }}
       >
@@ -34,7 +34,7 @@ export default async function Image() {
             bottom: 0,
             display: "flex",
             flexWrap: "wrap",
-            opacity: 0.15,
+            opacity: 0.1,
           }}
         >
           {Array.from({ length: 400 }).map((_, i) => (
@@ -43,11 +43,25 @@ export default async function Image() {
               style={{
                 width: 60,
                 height: 63,
-                border: "1px solid #17150F",
+                border: "1px solid #ccfd03",
               }}
             />
           ))}
         </div>
+
+        {/* Glow effect */}
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 600,
+            height: 600,
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(204, 253, 3, 0.15) 0%, transparent 70%)",
+          }}
+        />
 
         {/* Main content */}
         <div
@@ -56,22 +70,21 @@ export default async function Image() {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
+            zIndex: 1,
           }}
         >
           {/* Wordmark */}
           <div
             style={{
               display: "flex",
-              fontSize: 120,
+              fontSize: 140,
               fontWeight: 800,
               letterSpacing: "0.05em",
               marginBottom: 24,
+              color: "#ccfd03",
             }}
           >
-            <span style={{ display: "flex", color: "#E8402A" }}>B</span>
-            <span style={{ display: "flex", color: "#2A5BFF" }}>L</span>
-            <span style={{ display: "flex", color: "#FF8A00" }}>O</span>
-            <span style={{ display: "flex", color: "#17150F" }}>K</span>
+            BLOKR
           </div>
 
           {/* Tagline */}
@@ -80,8 +93,8 @@ export default async function Image() {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              fontSize: 32,
-              color: "#17150F",
+              fontSize: 36,
+              color: "#ffffff",
               textAlign: "center",
               maxWidth: 800,
               lineHeight: 1.4,
@@ -97,18 +110,16 @@ export default async function Image() {
               display: "flex",
               alignItems: "center",
               marginTop: 40,
-              backgroundColor: "#FFC800",
+              backgroundColor: "#ccfd03",
               padding: "12px 24px",
               borderRadius: 8,
-              border: "3px solid #17150F",
-              boxShadow: "4px 4px 0 #17150F",
             }}
           >
             <span
               style={{
                 fontSize: 18,
                 fontWeight: 600,
-                color: "#17150F",
+                color: "#000000",
                 textTransform: "uppercase",
                 letterSpacing: "0.1em",
               }}
@@ -118,15 +129,15 @@ export default async function Image() {
           </div>
         </div>
 
-        {/* Decorative pixels */}
+        {/* Decorative pixels - lime corners */}
         <div
           style={{
             position: "absolute",
             top: 40,
             left: 40,
-            width: 32,
-            height: 32,
-            backgroundColor: "#E8402A",
+            width: 24,
+            height: 24,
+            backgroundColor: "#ccfd03",
           }}
         />
         <div
@@ -134,9 +145,9 @@ export default async function Image() {
             position: "absolute",
             top: 40,
             right: 40,
-            width: 32,
-            height: 32,
-            backgroundColor: "#2A5BFF",
+            width: 24,
+            height: 24,
+            backgroundColor: "#ccfd03",
           }}
         />
         <div
@@ -144,9 +155,9 @@ export default async function Image() {
             position: "absolute",
             bottom: 40,
             left: 40,
-            width: 32,
-            height: 32,
-            backgroundColor: "#FFC800",
+            width: 24,
+            height: 24,
+            backgroundColor: "#ccfd03",
           }}
         />
         <div
@@ -154,11 +165,25 @@ export default async function Image() {
             position: "absolute",
             bottom: 40,
             right: 40,
-            width: 32,
-            height: 32,
-            backgroundColor: "#FF8A00",
+            width: 24,
+            height: 24,
+            backgroundColor: "#ccfd03",
           }}
         />
+
+        {/* URL */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 40,
+            display: "flex",
+            fontSize: 20,
+            color: "#666666",
+            letterSpacing: "0.05em",
+          }}
+        >
+          blokr.store
+        </div>
       </div>
     ),
     {
