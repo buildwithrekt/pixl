@@ -112,32 +112,6 @@ export function Countdown({ targetDate, onComplete }: CountdownProps) {
 }
 
 export function CountdownBanner() {
-  const launchDateStr = process.env.NEXT_PUBLIC_LAUNCH_DATE
-  const launchDate = launchDateStr ? new Date(launchDateStr) : null
-
-  // Si pas de date configurée ou date invalide, afficher juste "Coming Soon"
-  if (!launchDate || isNaN(launchDate.getTime())) {
-    return (
-      <div className="bg-black border-b border-lime/30">
-        <div className="max-w-4xl mx-auto px-4 py-8 md:py-12 text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Sprite map={SPRITE_MAPS.fire} pixelSize={4} />
-            <span className="font-mono text-[11px] text-lime uppercase tracking-wider">
-              $BLOK Token Launch
-            </span>
-            <Sprite map={SPRITE_MAPS.fire} pixelSize={4} />
-          </div>
-          <h2 className="font-display text-2xl md:text-3xl text-white mb-6">
-            Coming Soon
-          </h2>
-          <p className="text-gray-500 text-sm mt-6 max-w-md mx-auto">
-            Get your $BLOK tokens ready. Pixel purchases will open soon.
-          </p>
-        </div>
-      </div>
-    )
-  }
-
   return (
     <div className="bg-black border-b border-lime/30">
       <div className="max-w-4xl mx-auto px-4 py-8 md:py-12 text-center">
@@ -150,13 +124,11 @@ export function CountdownBanner() {
         </div>
 
         <h2 className="font-display text-2xl md:text-3xl text-white mb-6">
-          Pixel purchases open in
+          Pixel purchases available soon
         </h2>
 
-        <Countdown targetDate={launchDate} />
-
-        <p className="text-gray-500 text-sm mt-6 max-w-md mx-auto">
-          Get your $BLOK tokens ready. The board opens when the countdown hits zero.
+        <p className="text-gray-500 text-sm max-w-md mx-auto">
+          Get your $BLOK tokens ready. The board opens soon.
         </p>
       </div>
     </div>
