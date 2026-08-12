@@ -39,6 +39,12 @@ export function Nav() {
         >
           Marketplace
         </Link>
+        <Link
+          href="/nfts"
+          className="text-sm text-gray-400 hover:text-lime transition-colors"
+        >
+          NFTs
+        </Link>
         <a
           href={process.env.NEXT_PUBLIC_BLOK_BUY_URL || "/blokr"}
           target="_blank"

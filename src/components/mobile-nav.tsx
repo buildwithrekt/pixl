@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { href: "/board", label: "Board" },
   { href: "/gallery", label: "Gallery" },
   { href: "/marketplace", label: "Marketplace" },
+  { href: "/nfts", label: "NFTs" },
   { href: "/how-it-works", label: "How it works" },
   { href: process.env.NEXT_PUBLIC_BLOK_BUY_URL || "/blokr", label: "Get $BLOK", external: true, highlight: true },
 ]
