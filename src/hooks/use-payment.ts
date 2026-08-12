@@ -5,8 +5,11 @@ import {
   useAccount,
   useSendTransaction,
   useWaitForTransactionReceipt,
+  useSwitchChain,
+  useChainId,
 } from "wagmi"
 import { encodeTransferWithMemo, getPixelTokenAddress, getPublicTreasuryAddress } from "@/lib/evm"
+import { robinhoodChain } from "@/lib/wagmi"
 
 interface PaymentState {
   status: "idle" | "pending" | "confirming" | "success" | "error"
@@ -16,6 +19,8 @@ interface PaymentState {
 
 export function usePayment() {
   const { address } = useAccount()
+  const chainId = useChainId()
+  const { switchChainAsync } = useSwitchChain()
   const { sendTransactionAsync, isPending } = useSendTransaction()
   const [state, setState] = useState<PaymentState>({
     status: "idle",
@@ -45,6 +50,11 @@ export function usePayment() {
       setState({ status: "pending", txHash: null, error: null })
 
       try {
+        // Switch to Robinhood Chain if needed
+        if (chainId !== robinhoodChain.id) {
+          await switchChainAsync({ chainId: robinhoodChain.id })
+        }
+
         const tokenAddress = getPixelTokenAddress()
         const treasuryAddress = getPublicTreasuryAddress()
 
