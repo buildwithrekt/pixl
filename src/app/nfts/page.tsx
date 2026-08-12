@@ -114,14 +114,19 @@ export default function NFTsPage() {
             </p>
           </div>
 
-          {/* Teaser */}
+          {/* CTA */}
           <div className="pt-8 border-t border-gray-800 mt-8">
-            <p className="font-mono text-sm text-lime uppercase tracking-wider">
+            <p className="font-mono text-sm text-lime uppercase tracking-wider mb-4">
               2,048 Blokrs. One destiny.
             </p>
-            <p className="text-gray-600 text-sm mt-2">
-              Collection coming soon.
-            </p>
+            <a
+              href="https://hoodmarket.io/collection/blokr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-lime text-black font-mono text-sm uppercase px-6 py-3 rounded-lg hover:bg-lime/90 transition-colors"
+            >
+              View Collection on Hoodmarket
+            </a>
           </div>
         </div>
       </div>
