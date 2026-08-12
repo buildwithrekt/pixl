@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1171",
+  "description": "Cellular automata patterns in blocks. A uncommon Blokr with Matrix palette.",
+  "image": "1171.png",
+  "external_url": "https://blokr.io/nfts/1171",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Matrix"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "rare"
+    },
+    {
+      "trait_type": "Style",
+      "value": "cellular blocks"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 10,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 60,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 9,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

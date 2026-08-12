@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1524",
+  "description": "Layered horizontal block structures. A uncommon Blokr with Void Crystal palette.",
+  "image": "1524.png",
+  "external_url": "https://blokr.io/nfts/1524",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Void Crystal"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "epic"
+    },
+    {
+      "trait_type": "Style",
+      "value": "block layers"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 7,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 51,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 14,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

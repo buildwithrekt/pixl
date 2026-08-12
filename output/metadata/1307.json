@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1307",
+  "description": "Explosive burst of pixel clusters. A uncommon Blokr with Toxic palette.",
+  "image": "1307.png",
+  "external_url": "https://blokr.io/nfts/1307",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Toxic"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Style",
+      "value": "pixel explosion"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 7,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 44,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 9,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

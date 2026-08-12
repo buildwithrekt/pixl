@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1029",
+  "description": "Intricate maze constructed of blocks. A uncommon Blokr with Paper palette.",
+  "image": "1029.png",
+  "external_url": "https://blokr.io/nfts/1029",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Paper"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Style",
+      "value": "block maze"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 10,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 32,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 56,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

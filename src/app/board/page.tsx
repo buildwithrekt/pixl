@@ -50,8 +50,8 @@ export default function BoardPage() {
   const [priceState, setPriceState] = useState<PriceState>({
     pixelsSold: 0,
     currentTier: 1,
-    basePrice: 150,
-    pricePerPixel: 150,
+    basePrice: 75,
+    pricePerPixel: 75,
   })
   const [isLoading, setIsLoading] = useState(true)
   const [cellSize, setCellSize] = useState(6) // Default cell size

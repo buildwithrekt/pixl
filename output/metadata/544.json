@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #544",
+  "description": "Intricate maze constructed of blocks. A uncommon Blokr with Plasma palette.",
+  "image": "544.png",
+  "external_url": "https://blokr.io/nfts/544",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Plasma"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "rare"
+    },
+    {
+      "trait_type": "Style",
+      "value": "block maze"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 10,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 70,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 8,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

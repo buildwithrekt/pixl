@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #766",
+  "description": "Wave patterns formed by aligned blocks. A common Blokr with Infrared palette.",
+  "image": "766.png",
+  "external_url": "https://blokr.io/nfts/766",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Infrared"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Style",
+      "value": "block waves"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 7,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 33,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 52,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

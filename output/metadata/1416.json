@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1416",
+  "description": "Intricate maze constructed of blocks. A uncommon Blokr with Void Crystal palette.",
+  "image": "1416.png",
+  "external_url": "https://blokr.io/nfts/1416",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Void Crystal"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "epic"
+    },
+    {
+      "trait_type": "Style",
+      "value": "block maze"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 9,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 67,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 40,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

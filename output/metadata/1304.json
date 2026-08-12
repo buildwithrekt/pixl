@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1304",
+  "description": "Towering columns of varying heights. A common Blokr with Moss palette.",
+  "image": "1304.png",
+  "external_url": "https://blokr.io/nfts/1304",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Moss"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Style",
+      "value": "block columns"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 7,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 36,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 59,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

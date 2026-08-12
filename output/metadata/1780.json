@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1780",
+  "description": "Matrix-style cascading block rain. A common Blokr with Slate palette.",
+  "image": "1780.png",
+  "external_url": "https://blokr.io/nfts/1780",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Slate"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Style",
+      "value": "digital rain"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 8,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 77,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 18,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

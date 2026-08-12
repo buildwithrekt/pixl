@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1925",
+  "description": "Explosive burst of pixel clusters. A rare Blokr with Singularity palette.",
+  "image": "1925.png",
+  "external_url": "https://blokr.io/nfts/1925",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Singularity"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "legendary"
+    },
+    {
+      "trait_type": "Style",
+      "value": "pixel explosion"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 10,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 43,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 53,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "rare"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

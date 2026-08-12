@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1940",
+  "description": "Tetris-like stacked blocks rising upward. A common Blokr with Matrix palette.",
+  "image": "1940.png",
+  "external_url": "https://blokr.io/nfts/1940",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Matrix"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "rare"
+    },
+    {
+      "trait_type": "Style",
+      "value": "stacked blocks"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 7,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 69,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 34,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

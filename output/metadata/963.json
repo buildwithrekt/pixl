@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #963",
+  "description": "Blocks floating and falling through space. A common Blokr with Moss palette.",
+  "image": "963.png",
+  "external_url": "https://blokr.io/nfts/963",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Moss"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Style",
+      "value": "falling blocks"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 7,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 47,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 54,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

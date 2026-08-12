@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #373",
+  "description": "Scattered clusters of vibrant pixels. A common Blokr with Moss palette.",
+  "image": "373.png",
+  "external_url": "https://blokr.io/nfts/373",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Moss"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Style",
+      "value": "pixel scatter"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 4,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 45,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 48,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

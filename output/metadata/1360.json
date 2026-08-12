@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1360",
+  "description": "Tetris-like stacked blocks rising upward. A common Blokr with Ocean Deep palette.",
+  "image": "1360.png",
+  "external_url": "https://blokr.io/nfts/1360",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Ocean Deep"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Style",
+      "value": "stacked blocks"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 5,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 45,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 62,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

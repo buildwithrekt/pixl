@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1727",
+  "description": "Chaotic arrangement of tetris pieces. A common Blokr with Arctic palette.",
+  "image": "1727.png",
+  "external_url": "https://blokr.io/nfts/1727",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Arctic"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Style",
+      "value": "tetris chaos"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 7,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 72,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 60,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1482",
+  "description": "Scattered clusters of vibrant pixels. A common Blokr with Plasma palette.",
+  "image": "1482.png",
+  "external_url": "https://blokr.io/nfts/1482",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Plasma"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "rare"
+    },
+    {
+      "trait_type": "Style",
+      "value": "pixel scatter"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 9,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 62,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 42,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

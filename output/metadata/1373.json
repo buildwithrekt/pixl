@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1373",
+  "description": "Cityscape skyline built from blocks. A uncommon Blokr with Storm palette.",
+  "image": "1373.png",
+  "external_url": "https://blokr.io/nfts/1373",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Storm"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Style",
+      "value": "block city"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 4,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 47,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 66,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

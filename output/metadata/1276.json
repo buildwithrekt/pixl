@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1276",
+  "description": "Hypnotic spiral made of rotating blocks. A uncommon Blokr with Quantum palette.",
+  "image": "1276.png",
+  "external_url": "https://blokr.io/nfts/1276",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Quantum"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "epic"
+    },
+    {
+      "trait_type": "Style",
+      "value": "block spiral"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 3,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 43,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 62,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

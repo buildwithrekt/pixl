@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1149",
+  "description": "Tetris-like stacked blocks rising upward. A common Blokr with Arctic palette.",
+  "image": "1149.png",
+  "external_url": "https://blokr.io/nfts/1149",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Arctic"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Style",
+      "value": "stacked blocks"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 4,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 45,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 24,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

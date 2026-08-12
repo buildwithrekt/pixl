@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #247",
+  "description": "Blocks floating and falling through space. A common Blokr with Arctic palette.",
+  "image": "247.png",
+  "external_url": "https://blokr.io/nfts/247",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Arctic"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Style",
+      "value": "falling blocks"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 10,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 56,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 24,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

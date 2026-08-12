@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #706",
+  "description": "Explosive burst of pixel clusters. A common Blokr with Moss palette.",
+  "image": "706.png",
+  "external_url": "https://blokr.io/nfts/706",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Moss"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Style",
+      "value": "pixel explosion"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 6,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 35,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 46,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

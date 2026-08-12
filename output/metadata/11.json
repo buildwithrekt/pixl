@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #11",
+  "description": "Chaotic arrangement of tetris pieces. A common Blokr with Infrared palette.",
+  "image": "11.png",
+  "external_url": "https://blokr.io/nfts/11",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Infrared"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Style",
+      "value": "tetris chaos"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 4,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 59,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 64,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

@@ -16,7 +16,7 @@ export function LiveStats() {
   const [stats, setStats] = useState<Stats>({
     pixelsSold: 0,
     currentTier: 1,
-    pricePerPixel: 150,
+    pricePerPixel: 75,
     zonesCount: 0,
   })
   const [isLoading, setIsLoading] = useState(true)
@@ -35,7 +35,7 @@ export function LiveStats() {
             ...prev,
             pixelsSold: priceData.pixelsSold || 0,
             currentTier: priceData.currentTier || 1,
-            pricePerPixel: priceData.pricePerPixel || 150,
+            pricePerPixel: priceData.pricePerPixel || 75,
           }))
         }
 

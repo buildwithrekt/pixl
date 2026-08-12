@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #896",
+  "description": "Cityscape skyline built from blocks. A uncommon Blokr with Midnight palette.",
+  "image": "896.png",
+  "external_url": "https://blokr.io/nfts/896",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Midnight"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Style",
+      "value": "block city"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 8,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 65,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 42,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

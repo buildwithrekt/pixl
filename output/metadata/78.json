@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #78",
+  "description": "Towering columns of varying heights. A common Blokr with Lime Core palette.",
+  "image": "78.png",
+  "external_url": "https://blokr.io/nfts/78",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Lime Core"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Style",
+      "value": "block columns"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 10,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 58,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 12,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

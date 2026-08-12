@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1413",
+  "description": "Cellular automata patterns in blocks. A common Blokr with Moss palette.",
+  "image": "1413.png",
+  "external_url": "https://blokr.io/nfts/1413",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Moss"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Style",
+      "value": "cellular blocks"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 9,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 77,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 18,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

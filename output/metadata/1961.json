@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1961",
+  "description": "Wave patterns formed by aligned blocks. A uncommon Blokr with Plasma palette.",
+  "image": "1961.png",
+  "external_url": "https://blokr.io/nfts/1961",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Plasma"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "rare"
+    },
+    {
+      "trait_type": "Style",
+      "value": "block waves"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 10,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 38,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 55,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

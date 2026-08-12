@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #915",
+  "description": "Chaotic arrangement of tetris pieces. A common Blokr with Neon Streets palette.",
+  "image": "915.png",
+  "external_url": "https://blokr.io/nfts/915",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Neon Streets"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Style",
+      "value": "tetris chaos"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 9,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 31,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 41,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

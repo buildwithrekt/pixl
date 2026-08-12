@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #2047",
+  "description": "Explosive burst of pixel clusters. A uncommon Blokr with Matrix palette.",
+  "image": "2047.png",
+  "external_url": "https://blokr.io/nfts/2047",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Matrix"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "rare"
+    },
+    {
+      "trait_type": "Style",
+      "value": "pixel explosion"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 7,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 70,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 4,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

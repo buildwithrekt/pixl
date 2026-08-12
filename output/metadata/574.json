@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #574",
+  "description": "Cityscape skyline built from blocks. A common Blokr with Moss palette.",
+  "image": "574.png",
+  "external_url": "https://blokr.io/nfts/574",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Moss"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Style",
+      "value": "block city"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 6,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 79,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 34,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

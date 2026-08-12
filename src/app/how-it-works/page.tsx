@@ -176,7 +176,7 @@ export default function HowItWorksPage() {
             <CardTitle className="text-lg text-white mb-3">Pay in $BLOK</CardTitle>
             <p className="text-sm text-gray-400 leading-relaxed">
               Price = pixels × current tier rate.
-              6 tiers from 150 to 4,800 $BLOK per pixel as the board fills.
+              6 tiers from 75 to 2,400 $BLOK per pixel as the board fills.
             </p>
           </BentoCard>
 
@@ -242,12 +242,12 @@ export default function HowItWorksPage() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {[
-            { tier: 1, price: 150, multiplier: "1×", fill: "0-10%" },
-            { tier: 2, price: 300, multiplier: "2×", fill: "10-25%" },
-            { tier: 3, price: 600, multiplier: "4×", fill: "25-50%" },
-            { tier: 4, price: 1200, multiplier: "8×", fill: "50-75%" },
-            { tier: 5, price: 2400, multiplier: "16×", fill: "75-90%" },
-            { tier: 6, price: 4800, multiplier: "32×", fill: "90-100%" },
+            { tier: 1, price: 75, multiplier: "1×", fill: "0-10%" },
+            { tier: 2, price: 150, multiplier: "2×", fill: "10-25%" },
+            { tier: 3, price: 300, multiplier: "4×", fill: "25-50%" },
+            { tier: 4, price: 600, multiplier: "8×", fill: "50-75%" },
+            { tier: 5, price: 1200, multiplier: "16×", fill: "75-90%" },
+            { tier: 6, price: 2400, multiplier: "32×", fill: "90-100%" },
           ].map((t) => (
             <Card key={t.tier} variant="glow" className="p-4 text-center">
               <div className="font-mono text-xs text-gray-500 mb-2">Tier {t.tier}</div>

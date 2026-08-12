@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1658",
+  "description": "Colorful mosaic of interlocking blocks. A uncommon Blokr with Infrared palette.",
+  "image": "1658.png",
+  "external_url": "https://blokr.io/nfts/1658",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Infrared"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Style",
+      "value": "block mosaic"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 4,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 52,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 41,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

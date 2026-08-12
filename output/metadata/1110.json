@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1110",
+  "description": "Layered horizontal block structures. A common Blokr with Paper palette.",
+  "image": "1110.png",
+  "external_url": "https://blokr.io/nfts/1110",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Paper"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Style",
+      "value": "block layers"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 5,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 33,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 2,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

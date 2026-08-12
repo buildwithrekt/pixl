@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #1687",
+  "description": "Blocks floating and falling through space. A common Blokr with Slate palette.",
+  "image": "1687.png",
+  "external_url": "https://blokr.io/nfts/1687",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Slate"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Style",
+      "value": "falling blocks"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 8,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 65,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 39,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

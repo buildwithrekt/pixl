@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #937",
+  "description": "Matrix-style cascading block rain. A common Blokr with Midnight palette.",
+  "image": "937.png",
+  "external_url": "https://blokr.io/nfts/937",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Midnight"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Style",
+      "value": "digital rain"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 9,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 63,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 21,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

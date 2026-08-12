@@ -33,11 +33,11 @@ const tokenomics = [
 ]
 
 const tiers = [
-  { tier: 1, pixels: "0 - 100K", price: "150 $BLOK", multiplier: "1x" },
-  { tier: 2, pixels: "100K - 250K", price: "300 $BLOK", multiplier: "2x" },
-  { tier: 3, pixels: "250K - 500K", price: "600 $BLOK", multiplier: "4x" },
-  { tier: 4, pixels: "500K - 750K", price: "1,200 $BLOK", multiplier: "8x" },
-  { tier: 5, pixels: "750K - 1M", price: "2,400 $BLOK", multiplier: "16x" },
+  { tier: 1, pixels: "0 - 100K", price: "75 $BLOK", multiplier: "1x" },
+  { tier: 2, pixels: "100K - 250K", price: "150 $BLOK", multiplier: "2x" },
+  { tier: 3, pixels: "250K - 500K", price: "300 $BLOK", multiplier: "4x" },
+  { tier: 4, pixels: "500K - 750K", price: "600 $BLOK", multiplier: "8x" },
+  { tier: 5, pixels: "750K - 1M", price: "1,200 $BLOK", multiplier: "16x" },
 ]
 
 export default function BlokPage() {

@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #234",
+  "description": "Scattered clusters of vibrant pixels. A common Blokr with Sunset palette.",
+  "image": "234.png",
+  "external_url": "https://blokr.io/nfts/234",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Sunset"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "uncommon"
+    },
+    {
+      "trait_type": "Style",
+      "value": "pixel scatter"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 3,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 63,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 62,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Blokr #763",
+  "description": "Intricate maze constructed of blocks. A common Blokr with Paper palette.",
+  "image": "763.png",
+  "external_url": "https://blokr.io/nfts/763",
+  "attributes": [
+    {
+      "trait_type": "Palette",
+      "value": "Paper"
+    },
+    {
+      "trait_type": "Palette Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Style",
+      "value": "block maze"
+    },
+    {
+      "trait_type": "Complexity",
+      "value": 4,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Density",
+      "value": 72,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Chaos",
+      "value": 51,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "common"
+    },
+    {
+      "trait_type": "Generation",
+      "value": 2,
+      "display_type": "number"
+    }
+  ]
+}
