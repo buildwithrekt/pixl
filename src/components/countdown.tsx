@@ -113,9 +113,10 @@ export function Countdown({ targetDate, onComplete }: CountdownProps) {
 
 export function CountdownBanner() {
   const launchDateStr = process.env.NEXT_PUBLIC_LAUNCH_DATE
+  const launchDate = launchDateStr ? new Date(launchDateStr) : null
 
-  // Si pas de date configurée, afficher juste "Coming Soon"
-  if (!launchDateStr) {
+  // Si pas de date configurée ou date invalide, afficher juste "Coming Soon"
+  if (!launchDate || isNaN(launchDate.getTime())) {
     return (
       <div className="bg-black border-b border-lime/30">
         <div className="max-w-4xl mx-auto px-4 py-8 md:py-12 text-center">
@@ -136,8 +137,6 @@ export function CountdownBanner() {
       </div>
     )
   }
-
-  const launchDate = new Date(launchDateStr)
 
   return (
     <div className="bg-black border-b border-lime/30">
