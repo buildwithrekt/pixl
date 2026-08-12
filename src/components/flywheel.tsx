@@ -8,7 +8,7 @@ const steps = [
   {
     id: 1,
     title: "Buy Pixels",
-    description: "Pay in $BLOK",
+    description: "Pay in $BLOKR",
     icon: "grid",
   },
   {
@@ -38,13 +38,13 @@ export function Flywheel() {
         {/* Header */}
         <div className="text-center mb-12">
           <span className="font-mono text-[11px] text-lime uppercase tracking-wider">
-            The $BLOK Flywheel
+            The $BLOKR Flywheel
           </span>
           <h2 className="font-display text-display-lg text-white mt-2 mb-4">
             Every pixel burns. Every burn compounds.
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto">
-            A self-reinforcing loop: the more pixels get claimed, the more $BLOK burns,
+            A self-reinforcing loop: the more pixels get claimed, the more $BLOKR burns,
             the scarcer the supply, the higher the price. Early buyers win.
           </p>
         </div>

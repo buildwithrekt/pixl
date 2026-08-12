@@ -59,7 +59,7 @@ export function LiveStats() {
   const totalPixels = 1_048_576
   const percentFilled = (stats.pixelsSold / totalPixels) * 100
 
-  // Estimate total $BLOK burned (simplified: pixelsSold × current price)
+  // Estimate total $BLOKR burned (simplified: pixelsSold × current price)
   // In reality, burn calculation would account for tier changes
   const estimatedBurn = stats.pixelsSold * stats.pricePerPixel
 
@@ -70,7 +70,7 @@ export function LiveStats() {
       subtext: `of ${formatNumber(totalPixels)}`,
     },
     {
-      label: "$BLOK Burned",
+      label: "$BLOKR Burned",
       value: formatNumber(estimatedBurn),
       subtext: "tokens burned forever",
       hasFireIcon: true,
@@ -78,7 +78,7 @@ export function LiveStats() {
     {
       label: "Current Tier",
       value: stats.currentTier.toString(),
-      subtext: `${stats.pricePerPixel} $BLOK/px`,
+      subtext: `${stats.pricePerPixel} $BLOKR/px`,
     },
     {
       label: "Zones Painted",

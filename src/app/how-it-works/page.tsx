@@ -110,7 +110,7 @@ export default function HowItWorksPage() {
         </h1>
         <p className="text-lg text-gray-400 max-w-2xl mx-auto">
           The more space gets bought, the more expensive it becomes.
-          Every purchase burns $BLOK. Early buyers win.
+          Every purchase burns $BLOKR. Early buyers win.
         </p>
       </section>
 
@@ -173,10 +173,10 @@ export default function HowItWorksPage() {
             <div className="flex items-center gap-3 mb-4">
               <span className="font-mono text-3xl text-lime">02</span>
             </div>
-            <CardTitle className="text-lg text-white mb-3">Pay in $BLOK</CardTitle>
+            <CardTitle className="text-lg text-white mb-3">Pay in $BLOKR</CardTitle>
             <p className="text-sm text-gray-400 leading-relaxed">
               Price = pixels × current tier rate.
-              6 tiers from 75 to 2,400 $BLOK per pixel as the board fills.
+              6 tiers from 75 to 2,400 $BLOKR per pixel as the board fills.
             </p>
           </BentoCard>
 
@@ -187,7 +187,7 @@ export default function HowItWorksPage() {
             </div>
             <CardTitle className="text-lg text-white mb-3">Tokens burn</CardTitle>
             <p className="text-sm text-gray-400 leading-relaxed">
-              75% of $BLOK payments get burned daily.
+              75% of $BLOKR payments get burned daily.
               Zero mercy on supply.
             </p>
           </BentoCard>
@@ -252,7 +252,7 @@ export default function HowItWorksPage() {
             <Card key={t.tier} variant="glow" className="p-4 text-center">
               <div className="font-mono text-xs text-gray-500 mb-2">Tier {t.tier}</div>
               <div className="font-display text-2xl text-lime mb-1">{t.price}</div>
-              <div className="font-mono text-[10px] text-gray-500">$BLOK/px</div>
+              <div className="font-mono text-[10px] text-gray-500">$BLOKR/px</div>
               <div className="mt-3 pt-3 border-t border-gray-800">
                 <Chip className="text-[9px]">{t.multiplier}</Chip>
                 <div className="font-mono text-[9px] text-gray-600 mt-1">{t.fill}</div>

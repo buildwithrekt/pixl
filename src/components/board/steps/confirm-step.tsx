@@ -90,7 +90,7 @@ export function ConfirmStep({
           <div className="flex items-center justify-between">
             <span className="text-sm text-gray-400">Price per pixel</span>
             <span className="text-sm text-white">
-              {pricing.pricePerPixel} $BLOK
+              {pricing.pricePerPixel} $BLOKR
             </span>
           </div>
 
@@ -105,7 +105,7 @@ export function ConfirmStep({
 
           <div className="flex items-center justify-between">
             <span className="font-display font-bold text-white">Total</span>
-            <Chip>{pricing.totalPrice.toLocaleString()} $BLOK</Chip>
+            <Chip>{pricing.totalPrice.toLocaleString()} $BLOKR</Chip>
           </div>
         </CardContent>
       </div>

@@ -51,7 +51,7 @@ export function Nav() {
           rel="noopener noreferrer"
           className="text-sm text-lime hover:text-lime/80 transition-colors"
         >
-          Get $BLOK
+          Get $BLOKR
         </a>
         {isSignedIn && (
           <Link

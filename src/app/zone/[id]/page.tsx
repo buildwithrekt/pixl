@@ -192,13 +192,13 @@ export default async function ZonePage({ params }: ZonePageProps) {
 
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-400">Price paid</span>
-                  <Chip>{formatNumber(zone.totalPrice)} $BLOK</Chip>
+                  <Chip>{formatNumber(zone.totalPrice)} $BLOKR</Chip>
                 </div>
 
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-400">Tier at purchase</span>
                   <span className="font-mono text-sm text-white">
-                    {zone.pricePerPixel} $BLOK/px
+                    {zone.pricePerPixel} $BLOKR/px
                   </span>
                 </div>
               </CardContent>

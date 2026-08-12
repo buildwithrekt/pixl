@@ -118,7 +118,7 @@ export function CountdownBanner() {
         <div className="flex items-center justify-center gap-2 mb-4">
           <Sprite map={SPRITE_MAPS.fire} pixelSize={4} />
           <span className="font-mono text-[11px] text-lime uppercase tracking-wider">
-            $BLOK Token Launch
+            $BLOKR Token Launch
           </span>
           <Sprite map={SPRITE_MAPS.fire} pixelSize={4} />
         </div>
@@ -128,7 +128,7 @@ export function CountdownBanner() {
         </h2>
 
         <p className="text-gray-500 text-sm max-w-md mx-auto">
-          Get your $BLOK tokens ready. The board opens soon.
+          Get your $BLOKR tokens ready. The board opens soon.
         </p>
       </div>
     </div>

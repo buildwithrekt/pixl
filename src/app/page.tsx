@@ -3,7 +3,7 @@ import { Nav } from "@/components/nav"
 
 export const metadata: Metadata = {
   title: "BLOKR - Collaborative Pixel Canvas",
-  description: "Claim your spot on the million pixel canvas. Buy zones with $BLOK tokens, all payments burned every 24 hours.",
+  description: "Claim your spot on the million pixel canvas. Buy zones with $BLOKR tokens, all payments burned every 24 hours.",
 }
 import { Hero } from "@/components/hero"
 import { HowItWorks } from "@/components/how-it-works"

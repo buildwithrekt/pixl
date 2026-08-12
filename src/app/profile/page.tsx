@@ -139,7 +139,7 @@ export default function ProfilePage() {
                       Spent
                     </span>
                     <p className="font-display text-2xl font-bold text-lime">
-                      {totalSpent.toLocaleString()} $BLOK
+                      {totalSpent.toLocaleString()} $BLOKR
                     </p>
                   </div>
                   <div className="text-center">
@@ -254,7 +254,7 @@ function ZoneCard({ zone }: { zone: Zone }) {
                 Listed for
               </span>
               <span className="font-mono font-medium text-lime">
-                {BigInt(zone.listing.askingPrice).toLocaleString()} $BLOK
+                {BigInt(zone.listing.askingPrice).toLocaleString()} $BLOKR
               </span>
             </div>
           </div>

@@ -11,7 +11,7 @@ export function Hero() {
     <section className="flex flex-col items-center text-center px-4 sm:px-6 py-10 sm:py-16 max-w-4xl mx-auto">
       {/* Eyebrow */}
       <Eyebrow className="mb-6 sm:mb-8 text-[9px] sm:text-[11px]">
-        Live on Robinhood Chain · Powered by $BLOK
+        Live on Robinhood Chain · Powered by $BLOKR
       </Eyebrow>
 
       {/* Headline */}
@@ -36,7 +36,7 @@ export function Hero() {
         <Button size="lg" className="w-full sm:w-auto" asChild>
           <Link href="/board">Claim your pixels →</Link>
         </Button>
-        <Chip className="text-[10px] sm:text-xs">1 PX = 150 $BLOK</Chip>
+        <Chip className="text-[10px] sm:text-xs">1 PX = 150 $BLOKR</Chip>
       </div>
 
       {/* Animated pixels */}

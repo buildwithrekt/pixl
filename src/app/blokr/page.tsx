@@ -3,7 +3,7 @@ import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "$BLOK Token",
+  title: "$BLOKR Token",
   description: "The native currency of BLOKR. Buy pixels, burn tokens. 75% of payments burned daily.",
 }
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
@@ -17,12 +17,12 @@ const tokenomics = [
   {
     label: "Total Supply",
     value: "1,000,000,000",
-    suffix: "$BLOK",
+    suffix: "$BLOKR",
   },
   {
     label: "Burned",
     value: "0",
-    suffix: "$BLOK",
+    suffix: "$BLOKR",
     live: true,
   },
   {
@@ -33,11 +33,11 @@ const tokenomics = [
 ]
 
 const tiers = [
-  { tier: 1, pixels: "0 - 100K", price: "75 $BLOK", multiplier: "1x" },
-  { tier: 2, pixels: "100K - 250K", price: "150 $BLOK", multiplier: "2x" },
-  { tier: 3, pixels: "250K - 500K", price: "300 $BLOK", multiplier: "4x" },
-  { tier: 4, pixels: "500K - 750K", price: "600 $BLOK", multiplier: "8x" },
-  { tier: 5, pixels: "750K - 1M", price: "1,200 $BLOK", multiplier: "16x" },
+  { tier: 1, pixels: "0 - 100K", price: "75 $BLOKR", multiplier: "1x" },
+  { tier: 2, pixels: "100K - 250K", price: "150 $BLOKR", multiplier: "2x" },
+  { tier: 3, pixels: "250K - 500K", price: "300 $BLOKR", multiplier: "4x" },
+  { tier: 4, pixels: "500K - 750K", price: "600 $BLOKR", multiplier: "8x" },
+  { tier: 5, pixels: "750K - 1M", price: "1,200 $BLOKR", multiplier: "16x" },
 ]
 
 export default function BlokPage() {
@@ -49,7 +49,7 @@ export default function BlokPage() {
       <section className="px-6 py-16 max-w-4xl mx-auto text-center">
         <Eyebrow className="mb-4">ROBINHOOD CHAIN · ERC-20</Eyebrow>
         <h1 className="font-display text-5xl md:text-6xl font-bold text-lime mb-6">
-          $BLOK
+          $BLOKR
         </h1>
         <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
           The native currency of BLOKR. Buy pixels, burn tokens, claim your spot on the canvas forever.
@@ -64,7 +64,7 @@ export default function BlokPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Get $BLOK
+              Get $BLOKR
             </a>
           </Button>
         </div>
@@ -124,7 +124,7 @@ export default function BlokPage() {
               Every pixel purchase burns tokens. Forever.
             </h2>
             <p className="text-gray-400 mb-4">
-              When you buy pixels on BLOKR, 75% of your $BLOK payment gets burned. Every 24 hours, tokens are removed from circulation forever. 25% goes to the team for development.
+              When you buy pixels on BLOKR, 75% of your $BLOKR payment gets burned. Every 24 hours, tokens are removed from circulation forever. 25% goes to the team for development.
             </p>
             <p className="text-gray-400 mb-6">
               No team allocation. No recycling. Daily burns. Pure, permanent deflation.

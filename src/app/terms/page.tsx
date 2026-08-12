@@ -35,7 +35,7 @@ export default function TermsPage() {
             <h2 className="font-display text-xl text-white mb-4">2. Description of Service</h2>
             <p className="text-gray-400 leading-relaxed mb-4">
               BLOKR is a collaborative pixel canvas where users can purchase rectangular zones
-              using $BLOK tokens. The service includes:
+              using $BLOKR tokens. The service includes:
             </p>
             <ul className="list-disc list-inside text-gray-400 space-y-2">
               <li>A 1024×1024 pixel canvas divided into 8×8 pixel cells</li>
@@ -50,13 +50,13 @@ export default function TermsPage() {
             <p className="text-gray-400 leading-relaxed mb-4">
               All payments are processed on{" "}
               <span className="font-mono text-lime">Robinhood Chain</span>{" "}
-              using $BLOK tokens. You acknowledge that:
+              using $BLOKR tokens. You acknowledge that:
             </p>
             <ul className="list-disc list-inside text-gray-400 space-y-2">
               <li>Blockchain transactions are irreversible once confirmed</li>
               <li>You are responsible for ensuring correct wallet addresses and amounts</li>
               <li>Transaction fees (gas) are your responsibility</li>
-              <li>All collected $BLOK tokens are burned every 24 hours</li>
+              <li>All collected $BLOKR tokens are burned every 24 hours</li>
               <li>We cannot reverse or refund confirmed transactions</li>
             </ul>
           </section>

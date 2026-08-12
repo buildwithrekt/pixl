@@ -72,7 +72,7 @@ export function PayStep({
             <span className="font-display text-3xl font-bold text-white">
               {Number(reservation.totalPrice).toLocaleString()}
             </span>
-            <span className="font-mono text-lg ml-2 text-lime">$BLOK</span>
+            <span className="font-mono text-lg ml-2 text-lime">$BLOKR</span>
           </div>
         </CardContent>
       </div>
@@ -131,7 +131,7 @@ export function PayStep({
           "Reservation expired"
         ) : (
           <>
-            Pay {Number(reservation.totalPrice).toLocaleString()} $BLOK
+            Pay {Number(reservation.totalPrice).toLocaleString()} $BLOKR
           </>
         )}
       </Button>

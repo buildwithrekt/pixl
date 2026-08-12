@@ -106,14 +106,14 @@ export function ListingCard({
             <span className="font-mono text-[10px] text-gray-500 uppercase">
               Price
             </span>
-            <Chip>{formatPrice(listing.askingPrice)} $BLOK</Chip>
+            <Chip>{formatPrice(listing.askingPrice)} $BLOKR</Chip>
           </div>
           <div className="flex items-center justify-between">
             <span className="font-mono text-[10px] text-gray-500 uppercase">
               Floor
             </span>
             <span className="text-sm text-gray-400">
-              {formatPrice(listing.floorPrice)} $BLOK
+              {formatPrice(listing.floorPrice)} $BLOKR
             </span>
           </div>
         </div>

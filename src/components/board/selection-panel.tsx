@@ -39,7 +39,7 @@ export function SelectionPanel({
           </p>
           <div className="mt-4 flex items-center gap-2">
             <Chip>Tier {tier}</Chip>
-            <Chip variant="secondary">{pricePerPixel} $BLOK / px</Chip>
+            <Chip variant="secondary">{pricePerPixel} $BLOKR / px</Chip>
           </div>
         </CardContent>
       </Card>
@@ -85,12 +85,12 @@ export function SelectionPanel({
         <div className="border-t border-gray-700 pt-4">
           <div className="flex justify-between items-center mb-2">
             <span className="text-sm text-gray-500">Price per pixel</span>
-            <Chip>{pricePerPixel} $BLOK</Chip>
+            <Chip>{pricePerPixel} $BLOKR</Chip>
           </div>
           <div className="flex justify-between items-center">
             <span className="font-mono text-sm text-white">Total</span>
             <span className="font-display text-2xl text-lime">
-              {formatNumber(totalPrice)} $BLOK
+              {formatNumber(totalPrice)} $BLOKR
             </span>
           </div>
         </div>
@@ -103,7 +103,7 @@ export function SelectionPanel({
                 Coming Soon
               </Button>
               <p className="text-xs text-gray-500 text-center mt-2">
-                $BLOK token launching soon
+                $BLOKR token launching soon
               </p>
             </>
           ) : isConnected ? (

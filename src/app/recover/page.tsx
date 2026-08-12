@@ -135,7 +135,7 @@ export default function RecoverPage() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-500">Amount:</span>
-                    <span className="font-mono text-white">{result.data.amount} $BLOK</span>
+                    <span className="font-mono text-white">{result.data.amount} $BLOKR</span>
                   </div>
                   {result.data.memo && (
                     <div className="flex justify-between">

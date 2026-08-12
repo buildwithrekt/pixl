@@ -22,9 +22,9 @@ export function StatsTicker({
         PIXELS SOLD: {formatNumber(pixelsSold)} / {formatNumber(totalPixels)}
       </span>
       <span className="mx-8">•</span>
-      <span className="mx-8">$BLOK BURNED: {formatNumber(pixelsBurned)}</span>
+      <span className="mx-8">$BLOKR BURNED: {formatNumber(pixelsBurned)}</span>
       <span className="mx-8">•</span>
-      <span className="mx-8">CURRENT PRICE: {currentPrice} $BLOK / PX</span>
+      <span className="mx-8">CURRENT PRICE: {currentPrice} $BLOKR / PX</span>
       <span className="mx-8">•</span>
     </>
   )

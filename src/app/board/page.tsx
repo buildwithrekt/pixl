@@ -286,7 +286,7 @@ export default function BoardPage() {
                 <div className="bg-gray-800 border border-gray-700 rounded-[4px] p-3 col-span-2">
                   <span className="font-mono text-[8px] text-gray-500 uppercase">Price / Pixel</span>
                   <div className="font-display text-lg text-white">
-                    {priceState.pricePerPixel} <span className="text-sm text-gray-500">$BLOK</span>
+                    {priceState.pricePerPixel} <span className="text-sm text-gray-500">$BLOKR</span>
                   </div>
                 </div>
               </div>
@@ -341,7 +341,7 @@ export default function BoardPage() {
                 className="p-4 bg-gray-900 border border-lime/30 rounded-[6px] text-center"
               >
                 <p className="font-mono text-[11px] text-lime uppercase tracking-wider mb-1">
-                  $BLOK Token Coming Soon
+                  $BLOKR Token Coming Soon
                 </p>
                 <p className="text-[12px] text-gray-400">
                   Pixel purchases will be available once the token launches
@@ -356,7 +356,7 @@ export default function BoardPage() {
                 <span className="font-mono text-[10px] text-lime uppercase">Daily Burns</span>
               </div>
               <p className="text-sm text-gray-400">
-                All $BLOK is burned every 24h. Zero mercy on supply.
+                All $BLOKR is burned every 24h. Zero mercy on supply.
               </p>
             </div>
 

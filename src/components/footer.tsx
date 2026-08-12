@@ -8,7 +8,7 @@ const links = {
     { label: "Board", href: "/board" },
     { label: "Marketplace", href: "/marketplace" },
     { label: "How it works", href: "/how-it-works" },
-    { label: "Get $BLOK", href: BLOK_BUY_URL, external: true },
+    { label: "Get $BLOKR", href: BLOK_BUY_URL, external: true },
   ],
   support: [
     { label: "Recover payment", href: "/recover" },

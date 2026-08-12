@@ -15,9 +15,9 @@ export const LISTING_DURATION_MS = 30 * 24 * 60 * 60 * 1000 // 30 days in ms
  * Floor = Original Purchase Price × (Current Multiplier / Purchase Multiplier)
  *
  * Example:
- * - Bought at Tier 2 (2×) for 100,000 $BLOK
+ * - Bought at Tier 2 (2×) for 100,000 $BLOKR
  * - Now at Tier 4 (8×)
- * - Floor = 100,000 × (8/2) = 400,000 $BLOK
+ * - Floor = 100,000 × (8/2) = 400,000 $BLOKR
  */
 export function calculateFloorPrice(
   originalPrice: bigint,
@@ -80,7 +80,7 @@ export function validateAskingPrice(
   if (askingPrice < floorPrice) {
     return {
       valid: false,
-      error: `Asking price must be at least ${formatPrice(floorPrice)} $BLOK (floor price)`,
+      error: `Asking price must be at least ${formatPrice(floorPrice)} $BLOKR (floor price)`,
     }
   }
   return { valid: true }

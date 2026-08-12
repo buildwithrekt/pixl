@@ -12,16 +12,16 @@ const steps = [
   },
   {
     number: "02",
-    title: "Pay in $BLOK",
+    title: "Pay in $BLOKR",
     description:
-      "Price per pixel rises as the board fills. Pay with $BLOK token - all payments are on-chain.",
+      "Price per pixel rises as the board fills. Pay with $BLOKR token - all payments are on-chain.",
     shadow: "blue" as const,
   },
   {
     number: "03",
     title: "Tokens get burned",
     description:
-      "75% of collected $BLOK goes to the burn wallet. Every 24h, everything burns. Zero mercy on supply.",
+      "75% of collected $BLOKR goes to the burn wallet. Every 24h, everything burns. Zero mercy on supply.",
     shadow: "yellow" as const,
   },
 ]

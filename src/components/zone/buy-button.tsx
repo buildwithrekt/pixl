@@ -100,12 +100,12 @@ export function BuyButton({ zoneId, zoneWallet }: BuyButtonProps) {
         <CardContent className="p-0 space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-sm text-gray-400">Price</span>
-            <Chip>{askingPrice.toLocaleString()} $BLOK</Chip>
+            <Chip>{askingPrice.toLocaleString()} $BLOKR</Chip>
           </div>
           <div className="flex items-center justify-between">
             <span className="text-sm text-gray-400">Floor</span>
             <span className="text-sm text-gray-500">
-              {BigInt(listing.floorPrice).toLocaleString()} $BLOK
+              {BigInt(listing.floorPrice).toLocaleString()} $BLOKR
             </span>
           </div>
           <div className="flex items-center justify-between">
@@ -132,19 +132,19 @@ export function BuyButton({ zoneId, zoneWallet }: BuyButtonProps) {
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-400">Price</span>
                   <span className="font-mono font-medium text-white">
-                    {askingPrice.toLocaleString()} $BLOK
+                    {askingPrice.toLocaleString()} $BLOKR
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-400">Platform fee (5%)</span>
                   <span className="font-mono text-sm text-gray-500">
-                    {platformFee.toLocaleString()} $BLOK
+                    {platformFee.toLocaleString()} $BLOKR
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-400">Seller receives</span>
                   <span className="font-mono text-sm text-gray-500">
-                    {sellerProceeds.toLocaleString()} $BLOK
+                    {sellerProceeds.toLocaleString()} $BLOKR
                   </span>
                 </div>
               </div>

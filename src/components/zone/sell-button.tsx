@@ -64,7 +64,7 @@ export function SellButton({
 
     const priceValue = BigInt(askingPrice.replace(/[^0-9]/g, ""))
     if (priceValue < floorPrice) {
-      setError(`Price must be at least ${floorPrice.toLocaleString()} $BLOK`)
+      setError(`Price must be at least ${floorPrice.toLocaleString()} $BLOKR`)
       return
     }
 
@@ -148,12 +148,12 @@ export function SellButton({
         <CardContent className="p-0 space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-sm text-gray-400">Asking price</span>
-            <Chip>{BigInt(listing.askingPrice).toLocaleString()} $BLOK</Chip>
+            <Chip>{BigInt(listing.askingPrice).toLocaleString()} $BLOKR</Chip>
           </div>
           <div className="flex items-center justify-between">
             <span className="text-sm text-gray-400">Floor price</span>
             <span className="text-sm text-white">
-              {BigInt(listing.floorPrice).toLocaleString()} $BLOK
+              {BigInt(listing.floorPrice).toLocaleString()} $BLOKR
             </span>
           </div>
           <div className="flex items-center justify-between">
@@ -190,7 +190,7 @@ export function SellButton({
           <div className="flex items-center justify-between">
             <span className="text-sm text-gray-400">Est. floor</span>
             <span className="text-sm font-medium text-white">
-              {floorPrice.toLocaleString()} $BLOK
+              {floorPrice.toLocaleString()} $BLOKR
             </span>
           </div>
           <Button className="w-full" onClick={() => setShowModal(true)}>
@@ -212,7 +212,7 @@ export function SellButton({
                   Floor price (minimum)
                 </label>
                 <p className="font-mono text-lg text-white">
-                  {floorPrice.toLocaleString()} $BLOK
+                  {floorPrice.toLocaleString()} $BLOKR
                 </p>
               </div>
 
