@@ -4,7 +4,7 @@ import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "$BLOK Token",
-  description: "The native currency of BLOKR. Buy pixels, burn tokens. 100% deflationary with daily burns.",
+  description: "The native currency of BLOKR. Buy pixels, burn tokens. 75% of payments burned daily.",
 }
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Chip } from "@/components/ui/chip"
@@ -27,7 +27,7 @@ const tokenomics = [
   },
   {
     label: "Burn Rate",
-    value: "100%",
+    value: "75%",
     suffix: "of payments",
   },
 ]
@@ -124,14 +124,14 @@ export default function BlokPage() {
               Every pixel purchase burns tokens. Forever.
             </h2>
             <p className="text-gray-400 mb-4">
-              When you buy pixels on BLOKR, 100% of your $BLOK payment goes to the treasury wallet. Every 24 hours, the treasury burns all collected tokens — removed from circulation forever.
+              When you buy pixels on BLOKR, 75% of your $BLOK payment gets burned. Every 24 hours, tokens are removed from circulation forever. 25% goes to the team for development.
             </p>
             <p className="text-gray-400 mb-6">
               No team allocation. No recycling. Daily burns. Pure, permanent deflation.
             </p>
             <Chip>
               <Sprite map={SPRITE_MAPS.fire} pixelSize={2} className="inline-block mr-1" />
-              100% BURN RATE
+              75% BURN RATE
             </Chip>
           </div>
           <div className="flex-shrink-0">

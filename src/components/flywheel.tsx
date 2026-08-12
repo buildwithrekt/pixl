@@ -14,7 +14,7 @@ const steps = [
   {
     id: 2,
     title: "Tokens Burn",
-    description: "100% daily burn",
+    description: "75% daily burn",
     icon: "fire",
   },
   {
@@ -242,7 +242,7 @@ export function Flywheel() {
         {/* Bottom stats */}
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: "Daily Burns", value: "100%" },
+            { label: "Daily Burns", value: "75%" },
             { label: "Price Tiers", value: "6" },
             { label: "Max Multiplier", value: "32x" },
             { label: "Total Pixels", value: "1M+" },

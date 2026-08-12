@@ -187,7 +187,7 @@ export default function HowItWorksPage() {
             </div>
             <CardTitle className="text-lg text-white mb-3">Tokens burn</CardTitle>
             <p className="text-sm text-gray-400 leading-relaxed">
-              100% of $BLOK payments go to the treasury and get burned daily.
+              75% of $BLOK payments get burned daily.
               Zero mercy on supply.
             </p>
           </BentoCard>

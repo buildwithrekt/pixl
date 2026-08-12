@@ -21,7 +21,7 @@ const steps = [
     number: "03",
     title: "Tokens get burned",
     description:
-      "100% of collected $BLOK goes to the treasury. Every 24h, everything burns. Zero mercy on supply.",
+      "75% of collected $BLOK goes to the burn wallet. Every 24h, everything burns. Zero mercy on supply.",
     shadow: "yellow" as const,
   },
 ]
